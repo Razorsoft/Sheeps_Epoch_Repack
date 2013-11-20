@@ -1,0 +1,42 @@
+_fogChance = 15;
+fogScript = true;
+if(fogScript)then{
+	if ((random(_fogChance) < 1)then{
+		_Center = _this select 0
+		_dist1=_this select 1
+		_dist2= _this select 2
+		 
+		?(count _this > 3):_endNight=_this select 3;_startNight=_this select 4; goto "nighttest"
+		?(count _this == 3):goto "bigloop"
+		 
+		#nighttest
+		_hours = Date select 3
+		?((_hours>=_endNight) && (_hours<_startNight)): goto "waittoactivate"
+		 
+		#bigloop
+		@(Player distance _Center)<_dist2
+		_i=0
+		#loop
+		_height=-0.3
+		_Rradius=180
+		_Cloudalpha=1
+		?((Player distance _Center)>_dist1):_Cloudalpha= 1-(((Player distance _Center) - _dist1)/(_dist2- _dist1))
+		_radius=(random 10)+random _Rradius
+		_angle=(random 360)
+		_size = 10
+		_col = 1
+		_CC=[_col,_col,_col,.3*_Cloudalpha]
+		drop ["\ca\data\cl_basic", "", "Billboard", 8+random 1,8+random 1,  [(getpos Player select 0)+_radius*(sin(_angle)),(getpos Player select 1)+_radius*(cos(_angle)),_height],[0,0,0],5 , 0.2, 0.1568, 0,[_size], [[_col,_col,_col,0],_CC,_CC,_CC,_CC,_CC,_CC,[_col,_col,_col,0]], [0],0,0,"", "",""]
+		_i=_i+1
+		?(_i<1800):goto "loop"
+		~1
+		?(count _this == 3): goto "bigloop"
+		goto "nighttest"
+		 
+		 
+		 
+		#waittoactivate
+		~300
+		goto "nighttest"
+	};
+};

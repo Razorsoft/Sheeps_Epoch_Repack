@@ -1,0 +1,105 @@
+
+if(R3F_LOG_mutex_local_verrou) exitWith {
+	player globalChat STR_R3F_LOG_mutex_action_en_cours;
+};
+
+private["_locking", "_currObject", "_lockState", "_lockDuration", "_stringEscapePercent", "_interation", "_unlockDuration", "_totalDuration"];
+
+_currObject = _this select 0;
+_lockState = _this select 3;
+
+_totalDuration = 0;
+_stringEscapePercent = "%";
+
+switch (_lockState) do {
+    case 0:{ 
+    
+    	R3F_LOG_mutex_local_verrou = true;
+		_totalDuration = 5;
+		_lockDuration = _totalDuration;
+		_iteration = 0;
+		
+		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
+		
+		for "_iteration" from 1 to _lockDuration do {
+		    
+            if(player distance _currObject > 5) exitWith { 
+		        2 cutText ["Object lock interrupted...", "PLAIN DOWN", 1];
+                R3F_LOG_mutex_local_verrou = false;
+			};
+            
+            if (!(alive player)) exitWith {
+				2 cutText ["Object lock interrupted...", "PLAIN DOWN", 1];
+                R3F_LOG_mutex_local_verrou = false;
+			};
+            
+            if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { 
+                player switchMove "AinvPknlMstpSlayWrflDnon_medic";
+            };
+            
+			_lockDuration = _lockDuration - 1;
+		    _iterationPercentage = floor (_iteration / _totalDuration * 100);
+		    
+			2 cutText [format["Object lock %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
+		    sleep 1;
+		    
+			if (_iteration >= _totalDuration) exitWith { 
+		        sleep 1;
+                _currObject setVariable ["objectLocked", true, true];
+                2 cutText ["", "PLAIN DOWN", 1];
+                R3F_LOG_mutex_local_verrou = false;
+		    }; 
+		};
+		
+		player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; 
+    };
+    case 1:{ 
+        
+        R3F_LOG_mutex_local_verrou = true;
+		_totalDuration = 45;
+		_unlockDuration = _totalDuration;
+		_iteration = 0;
+		
+		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
+		
+		for "_iteration" from 1 to _unlockDuration do {
+		    
+            if(player distance _currObject > 5) exitWith { 
+		        2 cutText ["Object unlock interrupted...", "PLAIN DOWN", 1];
+                R3F_LOG_mutex_local_verrou = false;
+			};
+            
+            if (!(alive player)) exitWith {
+				2 cutText ["Object unlock interrupted...", "PLAIN DOWN", 1];
+                R3F_LOG_mutex_local_verrou = false;
+			};
+            
+            if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { 
+                player switchMove "AinvPknlMstpSlayWrflDnon_medic";
+            };
+            
+			_unlockDuration = _unlockDuration - 1;
+		    _iterationPercentage = floor (_iteration / _totalDuration * 100);
+		    
+			2 cutText [format["Object unlock %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
+		    sleep 1;
+		    
+			if (_iteration >= _totalDuration) exitWith { 
+		        sleep 1;
+                _currObject setVariable ["objectLocked", false, true];
+                2 cutText ["", "PLAIN DOWN", 1];
+                R3F_LOG_mutex_local_verrou = false;
+		    }; 
+		};
+		
+		player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; 
+    };
+    default{  
+        diag_log format["WASTELAND DEBUG: An error has occured in LockStateMachine.sqf. _lockState was unknown. _lockState actual: %1", _lockState];
+    };
+    
+    if !(R3F_LOG_mutex_local_verrou) then {
+        R3F_LOG_mutex_local_verrou = false;
+        diag_log format["WASTELAND DEBUG: An error has occured in LockStateMachine.sqf. Mutex lock was not reset. Mutex lock state actual: %1", R3F_LOG_mutex_local_verrou];
+    }; 
+};

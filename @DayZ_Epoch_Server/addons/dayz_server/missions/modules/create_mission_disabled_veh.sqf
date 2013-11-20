@@ -1,0 +1,1 @@
+[_veh,[_dir,_objPosition],_vehicle,true,"0"] call server_publishVeh;

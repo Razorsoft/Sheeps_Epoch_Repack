@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="dayz">
+        <Package name="dayz">
+                <Key ID="STR_action_drink">
+                        <Original>Drink Water</Original>
+                        <English>Drink Water</English>
+			<French>Boire de l'eau</French>
+			<German>Trinkwasser</German>
+                </Key>
+                <Key ID="STR_drink_stagnant_water">
+                        <Original>The water is warm and tastes kinda strange, but your thirst is quenched.</Original>
+                        <English>The water is warm and tastes kinda strange, but your thirst is quenched.</English>
+			<French>L'eau est chaude et a un goût un peu étrange, mais votre soif est étanchée.</French>
+			<German>Das Wasser ist lauwarm und schmeckt irgendwie komisch, aber dein Durst ist gestillt.</German>
+                </Key>
+                <Key ID="STR_drink_fresh_water">
+                        <Original>The water is cool and tastes a bit stale, but your thirst is quenched.</Original>
+                        <English>The water is cool and tastes a bit stale, but your thirst is quenched.</English>
+			<French>L'eau est fraîche et a un goût un peu étrange, mais votre soif est étanchée.</French>
+			<German>Das Wasser ist kühl und schmeckt etwas schal, aber dein Durst ist gestillt.</German>
+                </Key>
+        </Package>
+</Project>
