@@ -5,6 +5,98 @@ dayz_versionNo = 		getText(configFile >> "CfgMods" >> "DayZ" >> "version");
 dayz_hiveVersionNo = 	getNumber(configFile >> "CfgMods" >> "DayZ" >> "hiveVersion");
 _script = getText(missionConfigFile >> "onPauseScript");
 
+// ### [CPC] Indestructible Buildables Fix
+_cpcimmune =[
+"WoodFloor_DZ",
+"WoodFloorHalf_DZ",
+"WoodFloorQuarter_DZ",
+"Land_DZE_LargeWoodDoorLocked",
+"WoodLargeWallDoor_DZ",
+"WoodLargeWallWin_DZ",
+"WoodLargeWall_DZ",
+"Land_DZE_WoodDoorLocked",
+"WoodSmallWallDoor_DZ",
+"WoodSmallWallWin_DZ",
+"Land_DZE_GarageWoodDoor",
+"Land_DZE_GarageWoodDoorLocked",
+"WoodLadder_DZ",
+"WoodStairsSans_DZ",
+"WoodStairs_DZ",
+"WoodSmallWall_DZ",
+"WoodSmallWallThird_DZ",
+"CinderWallHalf_DZ",
+"CinderWall_DZ",
+"CinderWallDoorway_DZ",
+"Land_DZE_LargeWoodDoor",
+"MetalFloor_DZ",
+"CinderWallDoorSmallLocked_DZ",
+"CinderWallSmallDoorway_DZ",
+"CinderWallDoor_DZ",
+"LightPole_DZ",
+"Land_plot_rust_vrata",
+"Land_plot_green_vrata", 
+"Land_Misc_ConcPipeline_EP1",
+"Land_Misc_deerstand",
+"CanvasHut_DZ",
+"Land_Ind_TankSmall",
+"Land_Misc_Scaffolding",
+"HeliHCivil",
+"Land_vez",
+"Land_stodola_open",
+"Land_Barn_W_01",
+"Land_Ind_BoardsPack1",
+"Land_Ind_Timbers",
+"RampConcrete",
+"Hhedgehog_concrete",
+"Land_CncBlock",
+"Hedgehog_DZ",
+"Fence_corrugated_plate",
+"Fort_RazorWire",
+"Fence_Ind_long",
+"Fence_Ind",
+"Land_CamoNetB_EAST_EP1",
+"Land_CamoNet_EAST",
+"Land_CamoNetVar_EAST",
+"Land_CamoNetVar_NATO",
+"Land_CamoNetB_NATO",
+"Land_CamoNet_NATO",
+"Land_CamoNetB_EAST",
+"Land_tent_east",
+"Land_CamoNetB_NATO_EP1",
+"Land_HouseV_1I4",
+"Land_hut_old02",
+"Land_Ind_SawMillPen"
+"Land_Ind_Garage01",
+"Land_pumpa",
+"ZavoraAnim",
+"Land_CamoNetVar_EAST_EP1",
+"Land_CamoNet_NATO_EP1",
+"Land_CamoNetVar_NATO_EP1",
+"Land_CamoNet_EAST_EP1",
+"vehicleShelter_cdf",
+"Land_fort_bagfence_round",
+"Land_fort_bagfence_corner",
+"Land_fort_bagfence_long",
+"Land_BagFenceRound",
+"Land_Misc_Cargo2E",
+"Land_Misc_Cargo2B",
+"Ins_WarfareBConstructionSite",
+"Misc_Cargo1Bo_military",
+"Misc_cargo_cont_small_EP1",
+"Land_fort_rampart_EP1",
+"Land_ConcreteRamp",
+"Land_prebehlavka",
+"Land_fortified_nest_big",
+"Land_fortified_nest_small",
+"WarfareBDepot",
+"WarfareBCamp",
+"Land_Fort_Watchtower_EP1",
+"Land_Fort_Watchtower",
+"Base_WarfareBBarrier10xTall",
+"Land_HBarrier_largeBase_WarfareBBarrier10x"
+];
+// ### [CPC] Indestructible Buildables Fix
+
 if ((count playableUnits == 0) and !isDedicated) then {
 	isSinglePlayer = true;
 };
@@ -188,6 +280,13 @@ if (isServer and isNil "sm_done") then {
 			_object setdir _dir;
 			_object setposATL _pos;
 			_object setDamage _damage;
+// ### [CPC] Indestructible Buildables Fix
+if (typeOf(_object) in _cpcimmune) then {
+_object addEventHandler ["HandleDamage", {false}];
+_object enableSimulation false;
+};
+// ### [CPC] Indestructible Buildables Fix
+
 // ##### BASE BUILDING 1.2 Server Side ##### - START
 // This sets objects to appear properly once server restarts
 		//if ((_object isKindOf "Static") && !(_object isKindOf "TentStorage")) then {
