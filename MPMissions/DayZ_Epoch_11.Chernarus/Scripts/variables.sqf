@@ -1,6 +1,4 @@
 disableSerialization;
-
-
 Bandit1_DZ = 	"Bandit1_DZ";
 Bandit2_DZ = 	"Bandit2_DZ";
 BanditW1_DZ = 	"BanditW1_DZ";
@@ -13,11 +11,7 @@ Sniper1_DZ = 	"Sniper1_DZ";
 Camo1_DZ = 		"Camo1_DZ";
 Soldier1_DZ = 	"Soldier1_DZ";
 Rocket_DZ = 	"Rocket_DZ";
-
 AllPlayers = ["Survivor2_DZ","SurvivorWcombat_DZ","SurvivorWdesert_DZ","SurvivorWurban_DZ","SurvivorWsequishaD_DZ","SurvivorWsequisha_DZ","SurvivorWpink_DZ","SurvivorW3_DZ","SurvivorW2_DZ","Bandit1_DZ","Bandit2_DZ","BanditW1_DZ","BanditW2_DZ","Soldier_Crew_PMC","Sniper1_DZ","Camo1_DZ","Soldier1_DZ","Rocket_DZ","Rocker1_DZ","Rocker2_DZ","Rocker3_DZ","Rocker4_DZ","Priest_DZ","Functionary1_EP1_DZ","GUE_Commander_DZ","Ins_Soldier_GL_DZ","Haris_Press_EP1_DZ","Pilot_EP1_DZ","RU_Policeman_DZ","pz_policeman","pz_suit1","pz_suit2","pz_worker1","pz_worker2","pz_worker3","pz_doctor","pz_teacher","pz_hunter","pz_villager1","pz_villager2","pz_villager3","pz_priest","Soldier_TL_PMC_DZ","Soldier_Sniper_PMC_DZ","Soldier_Bodyguard_AA12_PMC_DZ","Drake_Light_DZ","CZ_Special_Forces_GL_DES_EP1_DZ","TK_INS_Soldier_EP1_DZ","TK_INS_Warlord_EP1_DZ","FR_OHara_DZ","FR_Rodriguez_DZ","CZ_Soldier_Sniper_EP1_DZ","Graves_Light_DZ","GUE_Soldier_MG_DZ","GUE_Soldier_Sniper_DZ","GUE_Soldier_Crew_DZ","GUE_Soldier_CO_DZ","GUE_Soldier_2_DZ"];
-
-
-
 meatraw = [
     "FoodSteakRaw",
     "FoodmeatRaw",
@@ -43,12 +37,8 @@ meatcooked = [
 	"ItemSeaBassCooked",
 	"ItemTunaCooked"
 ];
-
 no_output_food = ["FoodMRE", "FoodPistachio", "FoodNutmix","FoodBioMeat"]+meatcooked+meatraw;
-
-
 badfood = ["FoodBioMeat","FoodCanUnlabeled"];
-
 food_with_output=[
     "FoodCanBakedBeans",
     "FoodCanSardines",
@@ -67,7 +57,6 @@ food_with_output=[
 	"FoodCanTylers",
 	"FoodCanUnlabeled"
 ];
-
 food_output = [
     "TrashTinCan",
     "TrashTinCan",
@@ -86,7 +75,6 @@ food_output = [
 	"FoodCanTylersEmpty",
 	"FoodCanUnlabeledEmpty"
 ];
-
 no_output_drink = ["ItemWaterbottle", "ItemWaterbottleBoiled"];
 drink_with_output = [
     "ItemSoda",  
@@ -150,15 +138,11 @@ boil_tin_cans = [
     "ItemSodaMzlyEmpty", 
     "ItemSodaRabbitEmpty"
 ];
-
 dayz_combination = "";
 dayz_humanitytarget = "";
 dayz_combatLog = "";
 canRoll = true;
-
 canbuild = true;
-
-
 dayZ_partClasses = [
 	"PartFueltank",
 	"PartWheel",
@@ -169,27 +153,18 @@ dayZ_explosiveParts = [
 	"palivo",
 	"motor"
 ];
-
 SleepFood =				2160; 
 SleepWater =			1440; 
 SleepTemperatur	= 		90 / 100;	
-
-
 allowConnection = 		false;
 isSinglePlayer =		false;
 PVDZE_serverObjectMonitor = [];
 PlayerDeaths = [];
-
-
 dayz_Locations = [];
 dayz_locationsActive = [];
-
-
 Dayz_GUI_R = 0.38; 
 Dayz_GUI_G = 0.63; 
 Dayz_GUI_B = 0.26; 
-
-
 dayz_resetSelfActions = {
 	s_player_fire =			-1;
 	s_player_cook =			-1;
@@ -245,17 +220,11 @@ dayz_resetSelfActions = {
 	s_player_towing		 =  -1;
 };
 call dayz_resetSelfActions;
-
-
 s_player_lastTarget =	[objNull,objNull,objNull,objNull,objNull];
 s_player_repairActions = [];
-
-
 s_player_madsci 		= 	[];
 s_player_parts 			= 	[];
 s_player_combi 			= 	[];
-
-
 r_interrupt = 			false;
 r_doLoop = 				false;
 r_self = 				false;
@@ -287,10 +256,7 @@ r_action_repair = 		false;
 r_action_targets = 		[];
 r_pitchWhine = 			false;
 r_isBandit =			false;
-
 DZE_PROTOBOX = objNull;
-
-
 r_player_actions2 = [];
 r_action2 = false;
 r_player_lastVehicle = objNull;
@@ -304,7 +270,6 @@ r_player_removeActions2 = {
 		r_action2 = false;
 	};
 };
-
 USEC_woundHit 	= [
 	"",
 	"body",
@@ -355,7 +320,6 @@ USEC_typeOfWounds = [
 	"RightFoot","LeftFoot",
 	"neck","pilot"
 ];
-
 DZE_vehicleZwounds = [
 	"sklo predni L",
 	"sklo predni P",
@@ -370,8 +334,6 @@ DZE_vehicleZwounds = [
 	"Glass5",
 	"Glass6"
 ];
-
-
 dayz_zombieTargetList = [
 	["SoldierWB",50],
 	["Air",500],
@@ -382,13 +344,10 @@ PVDZE_obj_Publish = [];
 PVDZE_plr_HideBody = objNull;
 dayz_selectedVault = objNull;
 dayz_selectedDoor = objNull;
-
 PVDZE_veh_Publish = [];		
 PVDZE_obj_Trade = [];		
 PVDZE_plr_TradeMenu = [];  		
 PVDZE_plr_DeathB = [];
-
-
 dayz_dawn = 6;
 dayz_dusk = 18;
 if(isNil "dayz_maxAnimals") then {
@@ -397,7 +356,6 @@ if(isNil "dayz_maxAnimals") then {
 DAYZ_agentnumber = 0;
 dayz_animalDistance = 800;
 dayz_zSpawnDistance = 1000;
-
 if(isNil "dayz_maxLocalZombies") then {
 	dayz_maxLocalZombies = 15;
 };
@@ -432,7 +390,7 @@ if(isNil "dayz_maxpos") then {
 	dayz_maxpos = 20000;
 };
 if(isNil "DZE_teleport") then {
-	DZE_teleport = [1000,2000,500,200,800];
+	DZE_teleport = [14000,14000,14000,14000,14000];
 };
 if(isNil "DZE_BuildingLimit") then {
 	DZE_BuildingLimit = 150;
@@ -440,15 +398,12 @@ if(isNil "DZE_BuildingLimit") then {
 if(isNil "DZE_HumanityTargetDistance") then {
 	DZE_HumanityTargetDistance = 25;
 };
-
 DZE_REPLACE_WEAPONS = [["Crossbow","ItemMatchbox","ItemHatchet"],["Crossbow_DZ","ItemMatchbox_DZE","ItemHatchet_DZE"]];
-
 /*
 if(isNil "dayz_canBuildInCity") then {
 	dayz_canBuildInCity = false;
 };
 */
-
 if(isNil "dayz_zedSpawnVehCount") then {
 	dayz_zedSpawnVehCount = dayz_maxLocalZombies / 2;
 };
@@ -458,42 +413,27 @@ if(isNil "dayz_spawnAirCount") then {
 if(isNil "dayz_zedsAttackVehicles") then {
 	dayz_zedsAttackVehicles = true;
 };
-
-
 dayz_updateObjects = ["Plane","Car", "Helicopter", "Motorcycle", "Ship", "TentStorage", "VaultStorage","LockboxStorage","OutHouse_DZ","Wooden_shed_DZ","WoodShack_DZ","StorageShed_DZ"];
 dayz_disallowedVault = ["TentStorage", "BuiltItems","ModularItems","DZE_Base_Object"];
 dayz_reveal = ["AllVehicles","WeaponHolder","Land_A_tent","BuiltItems","ModularItems","DZE_Base_Object"];
 dayz_allowedObjects = ["TentStorage","TentStorageDomed","TentStorageDomed2", "VaultStorageLocked", "Hedgehog_DZ", "Sandbag1_DZ","TrapBear","Fort_RazorWire","WoodGate_DZ","Land_HBarrier1_DZ","Land_HBarrier3_DZ","Fence_corrugated_DZ","M240Nest_DZ","CanvasHut_DZ","ParkBench_DZ","MetalGate_DZ","OutHouse_DZ","Wooden_shed_DZ","WoodShack_DZ","StorageShed_DZ","Plastic_Pole_EP1_DZ","Generator_DZ","StickFence_DZ","LightPole_DZ","FuelPump_DZ","DesertCamoNet_DZ","ForestCamoNet_DZ","DesertLargeCamoNet_DZ","ForestLargeCamoNet_DZ","SandNest_DZ","DeerStand_DZ","MetalPanel_DZ","WorkBench_DZ","WoodFloor_DZ","WoodLargeWall_DZ","WoodLargeWallDoor_DZ","WoodLargeWallWin_DZ","WoodSmallWall_DZ","WoodSmallWallWin_DZ","WoodSmallWallDoor_DZ","LockboxStorageLocked","WoodFloorHalf_DZ","WoodFloorQuarter_DZ","WoodStairs_DZ","WoodStairsSans_DZ","WoodSmallWallThird_DZ","WoodLadder_DZ","Land_DZE_GarageWoodDoor","Land_DZE_LargeWoodDoor","Land_DZE_WoodDoor","Land_DZE_GarageWoodDoorLocked","Land_DZE_LargeWoodDoorLocked","Land_DZE_WoodDoorLocked","CinderWallHalf_DZ","CinderWall_DZ","CinderWallDoorway_DZ","CinderWallDoor_DZ","CinderWallDoorLocked_DZ","CinderWallSmallDoorway_DZ","CinderWallDoorSmall_DZ","CinderWallDoorSmallLocked_DZ","MetalFloor_DZ","WoodRamp_DZ"];
-
 DZE_LockableStorage = ["VaultStorage","VaultStorageLocked","LockboxStorageLocked","LockboxStorage"];
 DZE_LockedStorage = ["VaultStorageLocked","LockboxStorageLocked"];
 DZE_UnLockedStorage = ["VaultStorage","LockboxStorage"];
-
-
 DZE_isRemovable = ["Fence_corrugated_DZ","M240Nest_DZ","ParkBench_DZ","Plastic_Pole_EP1_DZ"];
 DZE_isWreck = ["SKODAWreck","HMMWVWreck","UralWreck","datsun01Wreck","hiluxWreck","datsun02Wreck","UAZWreck","Land_Misc_Garb_Heap_EP1","Fort_Barricade_EP1","Rubbish2"];
 DZE_isWreckBuilding = ["Land_wreck_cinder","Land_wood_wreck_quarter","Land_wood_wreck_floor","Land_wood_wreck_third","Land_wood_wreck_frame","Land_iron_vein_wreck","Land_silver_vein_wreck","Land_gold_vein_wreck","Land_ammo_supply_wreck"];
 DZE_isNewStorage = ["VaultStorage","OutHouse_DZ","Wooden_shed_DZ","WoodShack_DZ","StorageShed_DZ"];
-
-
 dayz_fuelpumparray = ["FuelPump_DZ","Land_A_FuelStation_Feed","Land_Ind_FuelStation_Feed_EP1","Land_FuelStation_Feed_PMC","FuelStation","Land_ibr_FuelStation_Feed","Land_fuelstation_army","Land_fuelstation","land_fuelstation_w","Land_benzina_schnell"];
 DZE_fueltruckarray = ["KamazRefuel_DZ","UralRefuel_TK_EP1_DZ","MtvrRefuel_DES_EP1_DZ","V3S_Refuel_TK_GUE_EP1_DZ"];
-
-
 dayz_fuelsources = ["Land_Ind_TankSmall","Land_fuel_tank_big","Land_fuel_tank_stairs","Land_fuel_tank_stairs_ep1","Land_wagon_tanker","Land_fuelstation","Land_fuelstation_army","land_fuelstation_w","Land_benzina_schnell"];
-
 dayz_spawnPos = getPosATL player;
-
 DZE_Lock_Door = "";
-
-
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\loot_init.sqf";
-
 if(isServer) then {
 	dayz_players = [];
 	dead_bodyCleanup = [];
 	needUpdate_objects = [];
-
 	if(isNil "dayz_fullMoonNights") then {
 		dayz_fullMoonNights = false;
 	};
@@ -503,18 +443,15 @@ if(isServer) then {
 	if(isNil "DZE_vehicleAmmo") then {
 		DZE_vehicleAmmo = 0;
 	};
-
 	if(isNil "DZE_BackpackGuard") then {
 		DZE_BackpackGuard = true;
 	};
 	
 	dayz_flyMonitor = [];		
 	DZE_FlyWorkingSet = [];
-
 	DZE_safeVehicle = ["ParachuteWest","ParachuteC"];
 	
 };
-
 if(!isDedicated) then {
 	
 	_funcGetLocation = 
@@ -610,7 +547,6 @@ if(!isDedicated) then {
 	
 	
 	
-
 	
 	if(isNil "DZE_AllowForceSave") then {
 		DZE_AllowForceSave = false;
@@ -624,27 +560,20 @@ if(!isDedicated) then {
 	if(isNil "DZE_ForceNameTagsOff") then {
 		DZE_ForceNameTagsOff = false;
 	};
-
 	DZE_CanPickup = true;
 	DZE_Q = false;
 	DZE_Z = false;
-
 	DZE_Q_alt = false;
 	DZE_Z_alt = false;
-
 	DZE_Q_ctrl = false;
 	DZE_Z_ctrl = false;
-
 	DZE_5 = false;
 	DZE_4 = false;
 	DZE_6 = false;
-
 	DZE_cancelBuilding = false;
 	DZE_PZATTACK = false;
 };
-
 globalSkin = "";
-
 allbuildables_class = [];
 allbuildables = [];
 allbuild_notowns = [];
@@ -653,7 +582,6 @@ wallarray = [];
 structures = [];
 CODEINPUT = [];
 keyCode = [];
-
 remProc = false;
 hasBuildItem = false;
 rem_procPart = false;
