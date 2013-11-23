@@ -35,7 +35,7 @@ open <b>/admintools/AdminToolsMain.sqf</b> Look for:
 Change "#######" to your Player ID
 </pre>
 
-<u><b>Turn Addon/Script off/b></u>
+<u><b>Turn Addon/Script off</b></u>
 ============================
 make sure your server and game are not running<br>
 Run scriptcontrol.exe<br>
@@ -71,5 +71,5 @@ Run scriptcontrol.exe<br>
 * Animated C130 Crashes<br>
 * Animated heli Crashes<br>
 * Debug Monitor - Credits: J0k3r5<br>
-
+* Idestructable Bases - Credits:
 

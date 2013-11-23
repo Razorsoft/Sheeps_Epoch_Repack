@@ -88,6 +88,7 @@ _key call server_hiveWrite;
 	if(!_donotusekey) then {
 		// Lock vehicle
 		_object setvehiclelock "locked";
+		_object setVariable ["R3F_LOG_disabled",true,true];
 	};
 
 	clearWeaponCargoGlobal  _object;
