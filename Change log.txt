@@ -1,0 +1,220 @@
+CHANGE LOG
+
+DEVELOPER VERSION 0.6
+* all 0.5 hotfixes applied
+
+* Indestructable Bases
+
+* Removed Toggle Debug as it breaks basebuilding
+
+* Reorganise Scripts in mission file
+
+* shrunk mission file by over 200KB 
+
+
+Alpha - (0.5 - The Rebuild)
+
+* Full rebuild from the ground up!
+
+Includes the following scripts
+
+* AI bus route - Credits: axeman
+
+* take clothes - Credits: Zabn
+
+* SnowStorm - Credits: ??
+
+* Safezone Commander - Credits: AlienX (updated to new version)
+
+* Sarg AI - Credits: Sarge
+
+* DayZ Mission System(chernarus) - Credits: lazyink (Original code by TheSzerdi, Falcyn and TAW_Tonic.)
+
+* Headshot Suicide - Credits: Grafzahl
+
+* house lights - Credits: axeman
+
+* street lights - Credits: axeman
+
+* tower lights - Credits: axeman
+
+* auto refuel - Credits: Seven
+
+* fast rope - Credits: BTC
+
+* nametags - Credits: Skaronator
+
+* snow - Credits: Audio Rejectz
+
+night fog
+
+* heli lift - Credits: R3F Team
+
+* towing - Credits: R3F Team
+
+* Airraid - Credits: mmmmyum
+
+* Admintools - Credits BluePheonix
+
+* Self bloodbag- Credits: Krixes
+
+* anti zombie emitter
+
+* Drink from water sources - Credits: Mamu1234
+
+* tent healing - Credits: Krixes
+
+* burn tents
+
+* Bottle Rain Water - Credits: BDC
+
+* Base Building 1.2 - Credits: daimyo21
+
+* Tame Dogs
+
+* Animated C130 Crashes
+
+* Animated heli Crashes
+
+* Debug Monitor - Credits: Jok3r
+
+11/09/2013 -Currently in Testing
+
+Alpha - (0.4 - let it snow!)
+
+* removed Tinbar from building materials costs
+
+* all base building materials now show "Build Recipes" menu
+
+* Fixed SargAI (removed completely and updated to 1.5.2)
+
+* Removed chopper and vehicle patrols from sargAI (causing lag and low FPS)
+
+* AI now gives Humanity
+
+* AI kills now count on debug monitor
+
+* Removed Destroy clothes script (broke takes clothes script)
+
+* Added blood to debug monitor
+
+* Added FPS to debug monitor
+
+* Destroyed vehicles now auto delet after 10 seconds
+
+* Fixed take clothes (removed and added clean script)
+
+* Fixed buildings dropping on restart - Credits: Draftkid
+
+* Fixed AI Bus blowing up when player enters it - Credits: cant find post (if it was you PM me !)
+
+* Fixed admintools teleport function (must set ID/UID to use)
+
+* includes 3 new scripts/addons
+
+* SnowStorm -Server now has a random chance on start/restart to make it snow!
+
+* Safezone Commander - Credits: AlienX (updated to new version)
+
+* Taunt Zombies - (uses modified epoch call zed function)
+
+SCRIPT CONTROL
+
+* server rates can now be set!
+
+03/11/2013 - 0.3 Released
+
+* Public Release!
+31/10/2013
+
+Alpha - (0.3 - getting there)
+
+* updated to epoch 1.0.2.5
+
+* includes 3 new scripts/addons
+
+* Sarg AI - Credits: Sarge<--- may be removed at authors request
+
+* DayZ Mission System(chernarus) - Credits: lazyink (Original code by TheSzerdi, Falcyn and TAW_Tonic.)
+
+* Headshot Suicide - Credits: Grafzahl <--- may be removed at authors request
+
+29/10/2013
+
+Alpha - (0.3 - getting there) - (release scheduled for 03/11/2013)
+
+* updating repack to epoch 1.0.2.5
+
+* includes 2 new scripts/addons
+
+* Custom Debug Monitor - (may incorporate into SCRIPT CONTROL for easy editing)
+
+* Destory Clothes - chance to destroy clothes when removing them
+
+* fixed bottle rain water
+
+* WIP - Burn Bodies - option to burn a corpse if you have matches and fuel can!
+
+(needs more work, having issue creating fire/smoke on body)
+
+* need a entrenching tool to hide bodys (can be turned on/off)
+
+* admintools now requires a players UID to be set first! (how to included)
+
+(i dont have permission to use admintools yet so if BluePheonix asks i will remove it)
+
+* full rewrite of SCRIPT CONTROL to use variable system instead of comments system
+
+* SCRIPT CONTROL new options for server (full moon nights, max heli spawns, max local zeds, max vehicle, max debris, etc)
+
+26/10/2013 - 0.2 Released
+
+Pre Alpha - (0.2 - fridays)
+
+* fixed Weight system not working
+
+* bottle rain water not working yet
+
+* released to testers
+
+25/10/2013
+
+Pre Alpha - (0.2 - fridays) - (release scheduled for 25/10/2013)
+
+* includes 2 new scripts/addons
+
+* AI bus route- Credits: axeman
+
+* take clothes - Credits: Zabn
+
+* reworked editor (no more "cant find C:\ blah blah blah")
+
+* fixed basebuilding "blackscreen" issue
+
+* fixed Script Control - doesn't load "install path" correctly
+
+23/10/2013 - 0.1 Released
+
+Pre Alpha - (0.1 - bugs)
+
+* released to testers
+
+19/10/2013
+
+* reverted beta patch to 103718 (to many RPT errors on lateset beta :p)
+
+* fixed some mistakes in scripts (never use a automatic line remover unless you test it first!! :p)
+
+* added halospawn
+
+* added Burn Tents
+
+* added TauntZombie
+
+* added heli lift and towing
+
+15/10/2013
+
+* Updated to Epoch 1.0.2.4
+
+* Tweakd file sizes (i remove blank lines and restructure some lines to make them smaller)
