@@ -1,21 +1,6 @@
-/*
-Build list by Daimyo Client side Edited by..
- *****TayTayTheKiller, Armifer & A Cupboard Named Jim*****
-Add and remove recipes, Objects(classnames), requirments to build, and town restrictions + extras
-This method is used because we are referencing magazines from player inventory as buildables.
-Main DEFAULT array (_buildlist) consist of 34 arrays within. These arrays contains parameters for player_build.sqf
-From left to right, each array contains 1st: [Recipe Array], 2nd: "Classname", [3rd: Requirements array]. 
-Check comments below for more info on parameters
-*/
+
 private["_isDestructable","_isSimulated","_disableSims","_objectSims","_objectSim","_requirements","_isStructure","_structure","_wallType","_removable","_buildlist","_build_townsrestrict"];
-
-
-
 _buildlist = [
-
-
-
-
 [[0,2,0,0,0,1, 0,0,2,0,0, 0,0,0,0,0,0], "Grave",							[[0,2.5,.1], [0,2,0], 	0, 	true, true, false, false, false, true, false, true, false, true, false]],
 [[1,1,4,0,0,0, 1,0,1,0,0, 0,0,0,0,0,0], "Base_WarfareBBarrier10x",		[[0,10,.6],  [0,10,0], 	0, 	true, true, true, false, false, true, false, true, true, false, false]],
 [[4,1,4,0,0,0, 0,0,1,0,0, 0,0,0,0,0,0], "Land_HBarrier_large",			[[0,7,1], 	 [0,4,0], 	0, 	true, true, true, false, false, true, false, true, true, true, false]],
@@ -80,12 +65,7 @@ _buildlist = [
 [[2,0,0,0,0,0, 0,0,0,5,0, 0,0,0,0,0,0], "Land_plot_green_vrata", 	   	    [[0,7,2.6],  [0,5,0], 	0, 	true, true, false, false, false, true, false, true, false, true, false]],
 [[1,0,0,0,0,0, 0,0,1,4,0, 0,0,0,0,0,0], "Land_plot_rust_vrata", 	   	    [[0,7,2.6],  [0,5,0], 	0, 	true, true, false, false, false, true, false, true, false, true, false]],
 [[0,0,0,0,8,0, 0,0,0,0,0, 0,0,0,1,0,0], "LightPole_DZ", 	   	            [[0,7,2.6],  [0,5,0], 	0, 	true, true, false, false, false, true, false, true, false, true, false]]
-
-
-
-
 ];
-
 for "_i" from 0 to ((count _buildlist) - 1) do
 {
 	_removable = (_buildlist select _i) select _i - _i + 1;
@@ -93,21 +73,15 @@ for "_i" from 0 to ((count _buildlist) - 1) do
 	allremovables set [count allremovables, _removable];
 	};
 };
-
 for "_i" from 0 to ((count _buildlist) - 1) do
 {
 	_classname = (_buildlist select _i) select _i - _i + 1;
 	allbuildables_class set [count allbuildables_class, _classname];
 };
-
 /*
 *** Remember that the last element in ANY array does not get comma ***
 Notice lines 47 and 62
 */
-
-
-
-
 _build_townsrestrict = [
 ["Chernogorsk", 600],
 ["Elektrozavodsk", 600],
@@ -156,14 +130,8 @@ _build_townsrestrict = [
 ["Vybor", 300],
 ["Vyshnoye", 275]
 ];
-
 allbuildables = _buildlist;
 allbuild_notowns = _build_townsrestrict;
-
-
-/*
-This Area is for extra arrays that need to be built via above arrays
-*/
 	
 		for "_i" from 0 to ((count _buildlist) - 1) do
 		{

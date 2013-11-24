@@ -9,12 +9,6 @@ basebuildScript = true;
 burnTent = true;
 
 scriptName "Functions\misc\fn_selfActions.sqf";
-***********************************************************
-	ADD ACTIONS FOR SELF
-	- Function
-	- [] call fnc_usec_selfActions;
-************************************************************
-
 
 private ["_isWreckBuilding","_temp_keys","_magazinesPlayer","_isPZombie","_vehicle","_inVehicle","_hasFuelE","_hasRawMeat","_hasKnife","_hasToolbox","_onLadder","_nearLight","_canPickLight","_canDo","_text","_isHarvested","_isVehicle","_isVehicletype","_isMan","_traderType","_ownerID","_isAnimal","_isDog","_isZombie","_isDestructable","_isTent","_isFuel","_isAlive","_Unlock","_lock","_buy","_dogHandle","_lieDown","_warn","_hastinitem","_allowedDistance","_menu","_menu1","_humanity_logic","_low_high","_cancel","_metals_trader","_traderMenu","_isWreck","_isRemovable","_isDisallowRepair","_rawmeat","_humanity","_speed","_dog","_hasbottleitem","_isAir","_isShip","_playersNear","_findNearestGens","_findNearestGen","_IsNearRunningGen","_cursorTarget","_isnewstorage","_itemsPlayer","_ownerKeyId","_typeOfCursorTarget","_hasKey","_oldOwner","_combi","_key_colors","_player_deleteBuild","_player_flipveh","_player_lockUnlock_crtl","_player_butcher","_player_studybody","_player_cook","_player_boil","_hasFuelBarrelE","_hasHotwireKit"];
 
@@ -959,25 +953,7 @@ if(burnTent)then{
 	player removeAction s_player_drinkWater;
     s_player_drinkWater = -1;
 };
-/*
-if(zombieEmitter)then{
 
-	if (("TrashTinCan" in magazines player) && ("TrashJackDaniels" in magazines player) && ("PartEngine" in magazines player) && ("ItemJerrycan" in magazines player) && ("ItemToolbox" in items player)) then {
-		hasShield = true;
-	} else {
-		hasShield = false;
-	};
-	if (hasShield) then {
-		if (zombieShield < 0) then {
-		zombieShield = player addAction [("<t color=""#00c362"">" + ("Anti-Zombie Freq Emitter") +"</t>"),"scripts\zombieshield.sqf","",5,false,true,"",""];
-		};
-	} else {
-		player removeAction zombieShield;
-		zombieShield = -1;
-	};
-
-};
-*/
 if (drinkwaterScript) then {
 
 private["_playerPos","_canDrink","_isPond","_isWell","_pondPos","_objectsWell","_objectsPond","_display"];

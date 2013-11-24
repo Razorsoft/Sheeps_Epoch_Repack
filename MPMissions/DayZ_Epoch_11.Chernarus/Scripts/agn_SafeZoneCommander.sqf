@@ -1,8 +1,3 @@
-/*
- * Safezone Commander Script by AlienX
- * www.opendayz.net
- * Thanks to everyone who has provided other scripts of the same format, without you I would not have been able to make this.
- */
 
 diag_log ( "[AGN] Starting Trader City Safezone Commander!" );
  

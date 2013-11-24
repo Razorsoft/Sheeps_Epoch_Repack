@@ -36,15 +36,10 @@ if (_inVehicle) then {cutText [localize "Can't do this in vehicle", "PLAIN DOWN"
 remProc = false;
 _randNum = round(random 100);
 _randNum2 = round(random 100);
-
 _classname = _bomb;
-if (_classname isKindof "Grave") then {
-_classname = "Grave";
-};
-switch (_classname) do
-{
-	case "Grave":
-	{
+if (_classname isKindof "Grave") then {_classname = "Grave";};
+switch (_classname) do{
+	case "Grave":{
 		_text = "Booby Trap";
 		if (_hasToolbox) then {_disarmChance = _disarmChance + 30;};
 		if (_hasEtool) then {_disarmChance = _disarmChance + 10;};
@@ -63,8 +58,7 @@ cutText [format["You need an entrenching tool to remove %1",_classname], "PLAIN 
 if (_longWait && _canRemove) then {
 	_cnt = _longWloop;
 	_cnt = _cnt * 10 + 10;
-	for "_i" from 0 to _longWloop do
-	{
+	for "_i" from 0 to _longWloop do{
 		cutText [format["Attempting to disarm %1  %2 seconds left.  Move from current position to cancel",_text,_cnt], "PLAIN DOWN",1];
 		if (player distance _locationPlayer > 0.2) then {cutText [format["Removal canceled for %1, position of player moved",_text], "PLAIN DOWN",1]; remProc = true; breakOut "exit";};
 		if (!_canDo || _onLadder || _inVehicle) then {cutText [format["Removal canceled for %1, player is unable to continue",_text], "PLAIN DOWN",1]; remProc = true; breakOut "exit";};
@@ -81,8 +75,7 @@ if (_longWait && _canRemove) then {
 if (_medWait && _canRemove) then {
 	_cnt = _medWloop;
 	_cnt = _cnt * 10 + 10;
-	for "_i" from 0 to _medWloop do
-	{
+	for "_i" from 0 to _medWloop do{
 		cutText [format["Attempting to disarm %1  %2 seconds left.  Move from current position to cancel",_text,_cnt], "PLAIN DOWN",1];
 		if (player distance _locationPlayer > 0.2) then {cutText [format["Removal canceled for %1, position of player moved",_text], "PLAIN DOWN",1]; remProc = true; breakOut "exit";};
 		if (!_canDo || _onLadder || _inVehicle) then {cutText [format["Removal canceled for %1, player is unable to continue",_text], "PLAIN DOWN",1]; remProc = true; breakOut "exit";};
@@ -119,8 +112,7 @@ if (_smallWait && _canRemove) then {
 if (_longWait && _failRemove) then {
 	_cnt = _longWloop;
 	_cnt = _cnt * 10 + 10;
-	for "_i" from 0 to _longWloop do
-	{
+	for "_i" from 0 to _longWloop do{
 		cutText [format["Attempting to disarm %1  %2 seconds left.  Move from current position to cancel",_text,_cnt], "PLAIN DOWN",1];
 		if (player distance _locationPlayer > 0.2) then {cutText [format["Removal canceled for %1, position of player moved",_text], "PLAIN DOWN",1]; remProc = true; breakOut "exit";};
 		if (!_canDo || _onLadder || _inVehicle) then {cutText [format["Removal canceled for %1, player is unable to continue",_text], "PLAIN DOWN",1]; remProc = true; breakOut "exit";};
@@ -138,8 +130,7 @@ if (_longWait && _failRemove) then {
 if (_medWait && _failRemove) then {
 	_cnt = _medWloop;
 	_cnt = _cnt * 10 + 10;
-	for "_i" from 0 to _medWloop do
-	{
+	for "_i" from 0 to _medWloop do{
 		cutText [format["Attempting to disarm %1  %2 seconds left.  Move from current position to cancel",_text,_cnt], "PLAIN DOWN",1];
 		if (player distance _locationPlayer > 0.2) then {cutText [format["Removal canceled for %1, position of player moved",_text], "PLAIN DOWN",1]; remProc = true; breakOut "exit";};
 		if (!_canDo || _onLadder || _inVehicle) then {cutText [format["Removal canceled for %1, player is unable to continue",_text], "PLAIN DOWN",1]; remProc = true; breakOut "exit";};
@@ -157,8 +148,7 @@ if (_medWait && _failRemove) then {
 if (_smallWait && _failRemove) then {
 	_cnt = _smallWloop;
 	_cnt = _cnt * 10 + 10;
-	for "_i" from 0 to _smallWloop do
-	{
+	for "_i" from 0 to _smallWloop do{
 		cutText [format["Attempting to disarm %1  %2 seconds left.  Move from current position to cancel",_text,_cnt], "PLAIN DOWN",1];
 		if (player distance _locationPlayer > 0.2) then {cutText [format["Removal canceled for %1, position of player moved",_text], "PLAIN DOWN",1]; remProc = true; breakOut "exit";};
 		if (!_canDo || _onLadder || _inVehicle) then {cutText [format["Removal canceled for %1, player is unable to continue",_text], "PLAIN DOWN",1]; remProc = true; breakOut "exit";};
@@ -180,9 +170,7 @@ if (!isNull _bomb && _kaBoom) then {
 sleep 1;
 dayzDeleteObj = [_dir, _pos, _objectID, _objectUID];
 publicVariable "dayzDeleteObj";
-if (isServer) then {
-	dayzDeleteObj call local_deleteObj;
-};
+if (isServer) then {dayzDeleteObj call local_deleteObj;};
 _detonate = "grenade" createVehicle _pos;
 sleep .1;
 deleteVehicle _bomb;
@@ -191,9 +179,7 @@ breakOut "exit";
 cutText [format["You disarmed the %1 successfully!",_text], "PLAIN DOWN"];
 	dayzDeleteObj = [_dir, _pos, _objectID, _objectUID];
 publicVariable "dayzDeleteObj";
-if (isServer) then {
-	dayzDeleteObj call local_deleteObj;
-};
+if (isServer) then {dayzDeleteObj call local_deleteObj;};
 sleep .1;
 if (!isNull _bomb) then {
 deleteVehicle _bomb;
