@@ -41,104 +41,102 @@ _qtyGlass=0;
 _buildables = [];
 _mags = magazines player;
 	if ("ItemTankTrap" in _mags) then {
-		_qtyTankTrap = {_x == "ItemTankTrap"} count magazines player;
-		_buildables set [count _buildables, _qtyTankTrap];
-		_itemTankTrap = "ItemTankTrap";
+_qtyTankTrap = {_x == "ItemTankTrap"} count magazines player;
+_buildables set [count _buildables, _qtyTankTrap];
+_itemTankTrap = "ItemTankTrap";
 	} else { _qtyTankTrap = 0; _buildables set [count _buildables, _qtyTankTrap]; };
-		
 	if ("ItemWire" in _mags) then {
-		_qtyWire = {_x == "ItemWire"} count magazines player;
-		_buildables set [count _buildables, _qtyWire]; 
-		_itemWire = "ItemWire";
+_qtyWire = {_x == "ItemWire"} count magazines player;
+_buildables set [count _buildables, _qtyWire]; 
+_itemWire = "ItemWire";
 	} else { _qtyWire = 0; _buildables set [count _buildables, _qtyWire]; };
 	
 	if ("ItemSandbag" in _mags) then {
-		_qtySandbag = {_x == "ItemSandbag"} count magazines player;
-		_buildables set [count _buildables, _qtySandbag]; 
-		_itemSandbag = "ItemSandbag";
-		} else { _qtySandbag = 0; _buildables set [count _buildables, _qtySandbag]; };
-		
+_qtySandbag = {_x == "ItemSandbag"} count magazines player;
+_buildables set [count _buildables, _qtySandbag]; 
+_itemSandbag = "ItemSandbag";
+} else { _qtySandbag = 0; _buildables set [count _buildables, _qtySandbag]; };
 	if ("PartWoodLumber" in _mags) then {
-		_qtyLumber = {_x == "PartWoodLumber"} count magazines player;
-		_buildables set [count _buildables, _qtyLumber]; 
-		_itemLumber = "PartWoodLumber";
+_qtyLumber = {_x == "PartWoodLumber"} count magazines player;
+_buildables set [count _buildables, _qtyLumber]; 
+_itemLumber = "PartWoodLumber";
 	} else { _qtyLumber = 0; _buildables set [count _buildables, _qtyLumber]; };
 	
 	if ("PartWoodPlywood" in _mags) then {
-		_qtyPlywood = {_x == "PartWoodPlywood"} count magazines player;
-		_buildables set [count _buildables, _qtyPlywood]; 
-		_itemPlywood = "PartWoodPlywood";
+_qtyPlywood = {_x == "PartWoodPlywood"} count magazines player;
+_buildables set [count _buildables, _qtyPlywood]; 
+_itemPlywood = "PartWoodPlywood";
 	} else { _qtyPlywood = 0; _buildables set [count _buildables, _qtyPlywood]; };
 	
 	if ("HandGrenade_West" in _mags) then {
-		_qtyGrenade = {_x == "HandGrenade_West"} count magazines player;
-		_buildables set [count _buildables, _qtyGrenade]; 
-		_itemGrenade = "HandGrenade_West";
+_qtyGrenade = {_x == "HandGrenade_West"} count magazines player;
+_buildables set [count _buildables, _qtyGrenade]; 
+_itemGrenade = "HandGrenade_West";
 	} else { _qtyGrenade = 0; _buildables set [count _buildables, _qtyGrenade]; };
 	if ("ItemSandbagLarge" in _mags) then {
-		_qtyHesco = {_x == "ItemSandbagLarge"} count magazines player;
-		_buildables set [count _buildables, _qtyHesco]; 
-		_itemHesco = "ItemSandbagLarge";
+_qtyHesco = {_x == "ItemSandbagLarge"} count magazines player;
+_buildables set [count _buildables, _qtyHesco]; 
+_itemHesco = "ItemSandbagLarge";
 	} else { _qtyHesco = 0; _buildables set [count _buildables, _qtyHesco]; };
 	
 	if ("sandbag_nest_kit" in _mags) then {
-		_qtySandbagNest = {_x == "sandbag_nest_kit"} count magazines player;
-		_buildables set [count _buildables, _qtySandbagNest]; 
-		_itemSandbagNest = "sandbag_nest_kit";
+_qtySandbagNest = {_x == "sandbag_nest_kit"} count magazines player;
+_buildables set [count _buildables, _qtySandbagNest]; 
+_itemSandbagNest = "sandbag_nest_kit";
 	} else { _qtySandbagNest = 0; _buildables set [count _buildables, _qtySandbagNest]; };
 	
 	if ("PartGeneric" in _mags) then {
-		_qtyScrap = {_x == "PartGeneric"} count magazines player;
-		_buildables set [count _buildables, _qtyScrap]; 
-		_itemScrap = "PartGeneric";
+_qtyScrap = {_x == "PartGeneric"} count magazines player;
+_buildables set [count _buildables, _qtyScrap]; 
+_itemScrap = "PartGeneric";
 	} else { _qtyScrap = 0; _buildables set [count _buildables, _qtyScrap]; };
 	
 	if ("ItemPole" in _mags) then {
-		_qtyPole = {_x == "ItemPole"} count magazines player;
-		_buildables set [count _buildables, _qtyPole]; 
-		_itemPole = "ItemPole";
+_qtyPole = {_x == "ItemPole"} count magazines player;
+_buildables set [count _buildables, _qtyPole]; 
+_itemPole = "ItemPole";
 	} else { _qtyPole = 0; _buildables set [count _buildables, _qtyPole]; };
 	
 	if ("ItemCorrugated" in _mags) then {
-		_qtyCorrugatedFence = {_x == "ItemCorrugated"} count magazines player;
-		_buildables set [count _buildables, _qtyCorrugatedFence]; 
-		_itemCorrugatedFence = "ItemCorrugated";
+_qtyCorrugatedFence = {_x == "ItemCorrugated"} count magazines player;
+_buildables set [count _buildables, _qtyCorrugatedFence]; 
+_itemCorrugatedFence = "ItemCorrugated";
 	} else { _qtyCorrugatedFence = 0; _buildables set [count _buildables, _qtyCorrugatedFence]; };
 	
 	if ("storage_shed_kit" in _mags) then {
-		_qtyStorageShed = {_x == "storage_shed_kit"} count magazines player;
-		_buildables set [count _buildables, _qtyStorageShed]; 
-		_itemStorageShed = "storage_shed_kit";
+_qtyStorageShed = {_x == "storage_shed_kit"} count magazines player;
+_buildables set [count _buildables, _qtyStorageShed]; 
+_itemStorageShed = "storage_shed_kit";
 	} else { _qtyStorageShed = 0; _buildables set [count _buildables, _qtyStorageShed]; };
 	
 	if ("desert_net_kit" in _mags) then {
-		_qtyDesertCamoNet = {_x == "desert_net_kit"} count magazines player;
-		_buildables set [count _buildables, _qtyDesertCamoNet]; 
-		_itemDesertCamoNet = "desert_net_kit";
+_qtyDesertCamoNet = {_x == "desert_net_kit"} count magazines player;
+_buildables set [count _buildables, _qtyDesertCamoNet]; 
+_itemDesertCamoNet = "desert_net_kit";
 	} else { _qtyDesertCamoNet = 0; _buildables set [count _buildables, _qtyDesertCamoNet]; };
 	
 	if ("forest_net_kit" in _mags) then {
-		_qtyForestCamoNet = {_x == "forest_net_kit"} count magazines player;
-		_buildables set [count _buildables, _qtyForestCamoNet]; 
-		_itemForestCamoNet = "forest_net_kit";
+_qtyForestCamoNet = {_x == "forest_net_kit"} count magazines player;
+_buildables set [count _buildables, _qtyForestCamoNet]; 
+_itemForestCamoNet = "forest_net_kit";
 	} else { _qtyForestCamoNet = 0; _buildables set [count _buildables, _qtyForestCamoNet]; };
 	
 	if ("wooden_shed_kit" in _mags) then {
-		_qtyWoodShed = {_x == "wooden_shed_kit"} count magazines player;
-		_buildables set [count _buildables, _qtyWoodShed]; 
-		_itemWoodShed = "wooden_shed_kit";
+_qtyWoodShed = {_x == "wooden_shed_kit"} count magazines player;
+_buildables set [count _buildables, _qtyWoodShed]; 
+_itemWoodShed = "wooden_shed_kit";
 	} else { _qtyWoodShed = 0; _buildables set [count _buildables, _qtyWoodShed]; };
 	
 	if ("ItemBurlap" in _mags) then {
-		_qtyBurlap = {_x == "ItemBurlap"} count magazines player;
-		_buildables set [count _buildables, _qtyBurlap]; 
-		_itemBurlap = "ItemBurlap";
+_qtyBurlap = {_x == "ItemBurlap"} count magazines player;
+_buildables set [count _buildables, _qtyBurlap]; 
+_itemBurlap = "ItemBurlap";
 	} else { _qtyBurlap = 0; _buildables set [count _buildables, _qtyBurlap]; };
 	
 	if ("PartGlass" in _mags) then {
-		_qtyGlass = {_x == "PartGlass"} count magazines player;
-		_buildables set [count _buildables, _qtyGlass]; 
-		_itemGlass = "PartGlass";
+_qtyGlass = {_x == "PartGlass"} count magazines player;
+_buildables set [count _buildables, _qtyGlass]; 
+_itemGlass = "PartGlass";
 	} else { _qtyGlass = 0; _buildables set [count _buildables, _qtyGlass]; };
 _result = false;
 _result = [_requeriments,_buildables] call BIS_fnc_areEqual;

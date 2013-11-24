@@ -87,47 +87,38 @@ if ("SPAWNED" in _UCthis) then {
 _grpid = parseNumber (_npc getVariable ["UPSMON_grpid","0"]);
 if(_grpid==0) then{
 KRON_UPS_Instances = KRON_UPS_Instances + 1;
-_grpid = KRON_UPS_Instances;
-};
+_grpid = KRON_UPS_Instances;};
 } else {
 KRON_UPS_Instances = KRON_UPS_Instances + 1;
-_grpid = KRON_UPS_Instances;
-};
+_grpid = KRON_UPS_Instances;};
 _grpidx = format["%1",_grpid];
 _grpname = format["%1_%2",(side _npc),_grpidx];
 _side = side _npc;
-_rnd = _grpid;
-{
+_rnd = _grpid;{
 _x allowDamage false;
 [nil, _x, "per", rHideObject, true] call RE; 
 _x disableAI "FSM";
 } foreach units _npc;
 sleep _rnd ;
 _members = units _npc;
-_npc = [_npc,_members] call MON_getleader;
-{
+_npc = [_npc,_members] call MON_getleader;{
 _x setVariable ["UPSMON_grpid", _grpid, false];
 sleep 0.05;
-if (side _x != civilian) then 
-{
+if (side _x != civilian) then {
 _x AddEventHandler ["hit", {nul = _this spawn R_SN_EHHIT}];
 sleep 0.05;
 _x AddEventHandler ["killed", {nul = _this spawn R_SN_EHKILLED}];
-sleep 0.05;
-};
+sleep 0.05;};
 } foreach units _npc;
 if (isnil {_npc getVariable ("UPSMON_grpid")}) then {
 _npc setVariable ["UPSMON_grpid", _grpid, false];
 sleep 0.05;
-if (side _npc != civilian) then 
-{
+if (side _npc != civilian) then {
 _npc AddEventHandler ["hit", {nul = _this spawn R_SN_EHHIT}];
 sleep 0.05;
 _npc AddEventHandler ["killed", {nul = _this spawn R_SN_EHKILLED}];
 sleep 0.05;
-}
-else
-{ 
+}else{ 
 _npc removeAllEventHandlers "firedNear";
 sleep 0.05;
 _npc AddEventHandler ["firedNear", {nul = _this spawn R_SN_EHFIREDNEAR}];
@@ -135,11 +126,8 @@ sleep 0.05;
 _npc removeAllEventHandlers "killed";
 sleep 0.05;
 _npc AddEventHandler ["killed", {nul = _this spawn R_SN_EHKILLEDCIV}];
-sleep 0.05;
-}
-};
-R_GOTHIT_ARRAY = R_GOTHIT_ARRAY + [0];
-{
+sleep 0.05;}};
+R_GOTHIT_ARRAY = R_GOTHIT_ARRAY + [0];{
 _x allowDamage true;
 [nil, _x, "per", rHideObject, false] call RE;
 _x enableAI "FSM";
@@ -147,16 +135,14 @@ _x enableAI "FSM";
 if (KRON_UPS_Debug>0) then {diag_log format["Group %1: New instance UPSMON_grpid: %2",_grpidx,_npc getVariable ["UPSMON_grpid","not defined"]]}; 
 _areamarker = _this select 1;
 if (isNil ("_areamarker")) exitWith {
-diag_log  "UPS: Area marker not defined.(Typo, or name not enclosed in quotation marks?)";
-};
+diag_log  "UPS: Area marker not defined.(Typo, or name not enclosed in quotation marks?)";};
 _centerpos = getMarkerPos _areamarker;
 _centerX = abs(_centerpos select 0);
 _centerY = abs(_centerpos select 1);
 _centerpos = [_centerX,_centerY];
 _showmarker = if ("SHOWMARKER" in _UCthis) then {"SHOWMARKER"} else {"HIDEMARKER"};
 if (_showmarker=="HIDEMARKER") then {
-_areamarker setMarkerAlpha 0;
-};
+_areamarker setMarkerAlpha 0;};
 _exit = true;
 if (typename _npc=="OBJECT") then {
 if (!isnull group _npc) then {
@@ -164,14 +150,10 @@ _npc = [_npc,units (group _npc)] call MON_getleader;
 }else{
 _vehicles = [_npc,2] call MON_nearestSoldiers;
 if (count _vehicles>0) then {
-_npc = [_vehicles select 0,units (_vehicles select 0)] call MON_getleader;
-};
-};
+_npc = [_vehicles select 0,units (_vehicles select 0)] call MON_getleader;};};
 } else {
 if (count _obj>0) then {
-_npc = [_obj,count _obj] call MON_getleader;
-};
-};
+_npc = [_obj,count _obj] call MON_getleader;};};
 if (!(_npc iskindof "Man")) then { 
 if (!isnull(commander _npc) ) then {
 _npc = commander _npc;
@@ -179,34 +161,23 @@ _npc = commander _npc;
 if (!isnull(driver _npc) ) then {
 _npc = driver _npc;
 }else{
-_npc = gunner _npc;
-};
-};
-group _npc selectLeader _npc;
-};
+_npc = gunner _npc;};};
+group _npc selectLeader _npc;};
 if (alive _npc) then {_exit = false;};
 if (KRON_UPS_Debug>0 && _exit) then {diag_log format["KRON_UPS_DEBUG: Group %1 - There are no alive members in group %1 %2 %3",_grpidx, typename _npc, typeof _npc, count units _npc]};
-if (_exit) exitWith {
-if (KRON_UPS_DEBUG>0) then {diag_log "KRON_UPS_DEBUG: Initialization aborted!"};
-};
+if (_exit) exitWith {if (KRON_UPS_DEBUG>0) then {diag_log "KRON_UPS_DEBUG: Initialization aborted!"};};
 _members = units _npc;
 KRON_UPS_Total = KRON_UPS_Total + (count _members);
-_vehicles = [];
-{
+_vehicles = [];{
 if (vehicle _x != _x ) then {
 _vehicles = _vehicles - [vehicle _x];
 _vehicles = _vehicles + [vehicle _x];
 };
 _membertypes = _membertypes + [typeof _x];
-} foreach _members;
-{
+} foreach _members;{
 _vehicletypes = _vehicletypes + [typeof _x];
-} foreach _vehicles;
-{
-_crew_units = [];
-{
-_crew_units set [count _crew_units, typeof _x];
-} foreach crew (vehicle _x);
+} foreach _vehicles;{
+_crew_units = [];{_crew_units set [count _crew_units, typeof _x];} foreach crew (vehicle _x);
 _vehiclecrews set [count _vehiclecrews, _crew_units];
 } foreach _vehicles;
 _isman = "Man" countType [ vehicle _npc]>0;
@@ -217,43 +188,30 @@ _isSoldier = _side != civilian;
 _friends=[];
 _enemies=[];
 _sharedenemy=0;
-if (_isSoldier) then {
-switch (_side) do {
-case west:
-{ _sharedenemy=0; 
+if (_isSoldier) then {switch (_side) do {
+case west:{ _sharedenemy=0; 
 _friendside = [west];
 _enemyside = [east];
 };
-case east:
-{  _sharedenemy=1; 
+case east:{  _sharedenemy=1; 
 _friendside = [east];
 _enemyside = [west];
 };
-case resistance:
-{ 
- _sharedenemy=2; 
+case resistance:{ _sharedenemy=2; 
  _enemyside = KRON_UPS_Res_enemy;
- 
 if (!(east in _enemyside)) then {
 _friendside = [east];
 }; 
 if (!(west in _enemyside)) then {
-_friendside = [west];
-}; 
-};
-};
-};
+_friendside = [west];}; };};};
 if (_side in KRON_UPS_Res_enemy) then {
 _enemyside = _enemyside + [resistance];
 }else {
-_friendside = _friendside + [resistance];
-};
+_friendside = _friendside + [resistance];};
 sleep .05;
-_surrender = call (compile format ["KRON_UPS_%1_SURRENDER",_side]); 
-{
+_surrender = call (compile format ["KRON_UPS_%1_SURRENDER",_side]); {
 if ( side _x in _friendside && ( _x iskindof "Tank"  || _x iskindof "Wheeled_APC" )) then {
-_friendlytanks = _friendlytanks + [_x];
-};
+_friendlytanks = _friendlytanks + [_x];};
 }foreach vehicles;
 _areasize = getMarkerSize _areamarker;
 _rangeX = _areasize select 0;
@@ -264,8 +222,7 @@ _cosdir=cos(_areadir);
 _sindir=sin(_areadir);
 _mindist=(_rangeX+_rangeY)/3;
 if (_rangeX==0) exitWith {
-diag_log format["UPSMON: Cannot patrol Sector: %1, Area Marker doesn't exist",_areamarker]; 
-};
+diag_log format["UPSMON: Cannot patrol Sector: %1, Area Marker doesn't exist",_areamarker]; };
 _orgMode = behaviour _npc;
 _orgSpeed = speedmode _npc;
 _currPos = getpos _npc;
@@ -354,15 +311,13 @@ _nomove="NOMOVE";
 _minreact = KRON_UPS_minreact * 3;
 _buildingdist = _buildingdist * 2;
 _makenewtarget = false;
-_wait = 3000;
-};
+_wait = 3000;};
 if (_circledefend) then {
 _nomove="NOMOVE";
 _minreact = KRON_UPS_minreact * 3;
 _buildingdist = _buildingdist / 2;
 _makenewtarget = false;
-_wait = 3000;
-};
+_wait = 3000;};
 _onroad = if ("ONROAD" in _UCthis) then {true} else {false};
 _nosmoke = if ("NOSMOKE" in _UCthis) then {true} else {false};
 _noveh = if ("NOVEH" in _UCthis) then {true} else {false};
@@ -384,8 +339,7 @@ _respawnmax = ["RESPAWN:",_respawnmax,_UCthis] call KRON_UPSgetArg;
 _respawntime = ["RESPAWNTIME:",_respawntime,_UCthis] call KRON_UPSgetArg;
 if (!_respawn) then {
 _respawnmax = 0;
-_respawntime = 0;
-};
+_respawntime = 0;};
 _initstr = ["INIT:","",_UCthis] call KRON_UPSgetArg;
 _nofollow = if ("NOFOLLOW" in _UCthis) then {"NOFOLLOW"} else {"FOLLOW"};
 _shareinfo = if ("NOSHARE" in _UCthis) then {"NOSHARE"} else {"SHARE"};
@@ -396,19 +350,12 @@ _currcycle=_cycle;
 if ("SPAWNED" in _UCthis) then {
 _spawned= true;
 } else {
-_spawned= false;
-};
-if (_spawned) then {
-if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_DEBUG: Group %1 - squad has been spawned, respawns %2",_grpidx,_respawnmax]}; 
+_spawned= false;};
+if (_spawned) then {if (KRON_UPS_Debug>0) then {diag_log format["KRON_UPS_DEBUG: Group %1 - squad has been spawned, respawns %2",_grpidx,_respawnmax]}; 
 switch (side _npc) do {
-case west:
-{ KRON_AllWest=KRON_AllWest + units _npc; 
-};
-case east:
-{  KRON_AllEast=KRON_AllEast + units _npc; };
-case resistance:
-{  
-KRON_AllRes=KRON_AllRes + units _npc; 
+case west:{ KRON_AllWest=KRON_AllWest + units _npc; };
+case east:{  KRON_AllEast=KRON_AllEast + units _npc; };
+case resistance:{  KRON_AllRes=KRON_AllRes + units _npc; 
 if (east in KRON_UPS_Res_enemy ) then {
 KRON_UPS_East_enemies = KRON_UPS_East_enemies+units _npc;
 } else {
@@ -418,12 +365,9 @@ if (west in KRON_UPS_Res_enemy ) then {
 KRON_UPS_West_enemies = KRON_UPS_West_enemies+units _npc;
 } else {
 KRON_UPS_West_friends = KRON_UPS_West_friends+units _npc;
-};
-};
-};
+};};};
 call (compile format ["KRON_UPS_%1_Total = KRON_UPS_%1_Total + count (units _npc)",side _npc]); 
-_vehicletypes = ["VEHTYPE:",_vehicletypes,_UCthis] call KRON_UPSgetArg;
-};
+_vehicletypes = ["VEHTYPE:",_vehicletypes,_UCthis] call KRON_UPSgetArg;};
 _initpos = "ORIGINAL";
 if ("RANDOM" in _UCthis) then {_initpos = "RANDOM"};
 if ("RANDOMUP" in _UCthis) then {_initpos = "RANDOMUP"}; 
@@ -437,8 +381,7 @@ if ("STEALTH" in _UCthis) then {_orgMode = "STEALTH"};
 if (!_isSoldier) then {
 _Behaviour = "SAFE";
 } else {
-_Behaviour = _orgMode; 
-};
+_Behaviour = _orgMode; };
 _npc setbehaviour _Behaviour;
 _noslow = if ("NOSLOW" in _UCthis) then {"NOSLOW"} else {"SLOW"};
 if (_noslow!="NOSLOW") then {
