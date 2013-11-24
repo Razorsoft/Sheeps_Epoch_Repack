@@ -1,26 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
  class CfgIdentities {
 	class id_SAR {
 		name = "Rincewind";

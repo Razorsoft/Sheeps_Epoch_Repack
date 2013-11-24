@@ -1,39 +1,30 @@
-if (isNil "key_combos_ftw") then {key_combos_ftw = true;};	//use keys combinations to show and toggle options
-if (isNil "_zombie_R_gay") then {_zombie_R_gay = true;};  		//Show zombies on start
-if (isNil "I_fuck_Animals") then {I_fuck_Animals = false;};  		//Show animals on start
-if (isNil "show_dead_lolz") then {show_dead_lolz = false;};  		//Show dead bodies on start
-if (isNil "show_tentz") then {show_tentz = true;};		//Show tents on start
-if (isNil "player_HUD_k") then {player_HUD_k = true;};		//Show players on HUD (ESP) on start
-if (isNil "fuck_gps_lol") then {fuck_gps_lol = true;};  	//Move gps and remove it's fckn frame
-if (isNil "simple_car_iconz") then {simple_car_iconz = false;};		//Show "simple" car icon instead default icons
-if (isNil "builtin_tp") then {builtin_tp = true;};		//Use built-in teleport
-if (isNil "alternate_tp") then {alternate_tp = false;};		//Use alternative teleport (could be used to tp on buildings)(not works for vehicles)(credits to monky)
-
-
-_addMAP2DAMI = true;				//Add map on start (GPS or MAP nesessary for functionality)
-_addGPS2DAMI = false;				//Add map on start (GPS or MAP nesessary for functionality)
-
-who_is_UDA = "You";  					//Text to identify You on map/gps. Leave blank ("") if You want to see only black icon
-
-zmc = [1, 0, 0, 1];				//Zombie icon color
-amc = [0, 0, 0, 1];				//Animals icon color
-pmc = [0, 0, 1 , 1];				//Player icon color
-pdmc = [1, 0, 0, 1];				//HUD player text color
-vmc = [0.0980392, 0.0980392, 0.439216, 1];	//Vehicle icon color
-wmc = [0.4, 0, 0, 1];				//Heliwrecks icon color
-tmc = [0.294118, 0, 0.509804, 1];		//Tent icon color
-_howfarzed = 1000;					//Distance from You to show zombie/animals icons
-_bigASSmap = 15000;				//Size of map (longest x or y) in meters
-
-// End of configuration
-
-
+if (isNil "key_combos_ftw") then {key_combos_ftw = true;};	
+if (isNil "_zombie_R_gay") then {_zombie_R_gay = true;};  		
+if (isNil "I_fuck_Animals") then {I_fuck_Animals = false;};  		
+if (isNil "show_dead_lolz") then {show_dead_lolz = false;};  		
+if (isNil "show_tentz") then {show_tentz = true;};		
+if (isNil "player_HUD_k") then {player_HUD_k = true;};		
+if (isNil "fuck_gps_lol") then {fuck_gps_lol = true;};  	
+if (isNil "simple_car_iconz") then {simple_car_iconz = false;};		
+if (isNil "builtin_tp") then {builtin_tp = true;};		
+if (isNil "alternate_tp") then {alternate_tp = false;};		
+_addMAP2DAMI = true;				
+_addGPS2DAMI = false;				
+who_is_UDA = "You";  					
+zmc = [1, 0, 0, 1];				
+amc = [0, 0, 0, 1];				
+pmc = [0, 0, 1 , 1];				
+pdmc = [1, 0, 0, 1];				
+vmc = [0.0980392, 0.0980392, 0.439216, 1];	
+wmc = [0.4, 0, 0, 1];				
+tmc = [0.294118, 0, 0.509804, 1];		
+_howfarzed = 1000;					
+_bigASSmap = 15000;				
 disableSerialization;
 _mini_gpz = (uinamespace getvariable "BIS_RscMiniMap") displayCtrl 101;
 _mini_gpz_frame = (uinamespace getvariable "BIS_RscMiniMap") displayCtrl 101000;
 _mm_w = 0.35;
 _mm_h = 0.301;
-
 esp_ftw_bro = 
 {
 	wat_is_opt = 
@@ -51,9 +42,6 @@ esp_ftw_bro =
 		];  
 	showCommandingMenu "#USER:wat_is_opt";
 };
-
-
-
 if (isnil "mapm") then 
 {
 	if (_addMAP2DAMI and !("ItemMap" in items player)) then {player addweapon "ItemMap";};			
@@ -72,12 +60,11 @@ if (isnil "mapm") then
 	titleText ["Loading tents and helicrashes...","PLAIN DOWN"];titleFadeOut 2;
 	helicrashes = nearestObjects [[maphalf,maphalf],["UH1Wreck_DZ"],mapscanrad];
 	tents = nearestObjects [[maphalf,maphalf],["TentStorage"],mapscanrad];
-
 	if fuck_gps_lol then
 	{
-		_mini_gpz_frame ctrlShow false;				//hide gps frame
-		_mm_x = (SafeZoneW + SafeZoneX) - (1 - 0.555); 		//move left a bit (to not cover main right icons)
-		_mm_y = (SafeZoneH + SafeZoneY) - (1 - 0.480); 		//move left a bit (to not cover main right icons)
+		_mini_gpz_frame ctrlShow false;				
+		_mm_x = (SafeZoneW + SafeZoneX) - (1 - 0.555); 		
+		_mm_y = (SafeZoneH + SafeZoneY) - (1 - 0.480); 		
 		_mini_gpz ctrlsetposition [_mm_x, _mm_y, _mm_w, _mm_h];
 		_mini_gpz ctrlcommit 0.01;
 	};
@@ -89,7 +76,6 @@ if (isnil "mapm") then
 		F7_DUH_K = (findDisplay 46) displayAddEventHandler ["KeyDown","if ((_this select 1) == 65) then {call esp_ftw_bro;};"];
 		DT_me = (findDisplay 46) displayAddEventHandler ["KeyUp","if ((_this select 1) == 57) then {detach (vehicle player);};"];
 	};
-
 	sleep 0.1;
 		   
 } 
@@ -108,7 +94,6 @@ else
 		_mini_gpz ctrlsetposition [_mm_x, _mm_y, _mm_w, _mm_h];
 		_mini_gpz ctrlcommit 0.01;  
 	};
-
 	sleep 0.1;
 	titleText ["Markers removed...","PLAIN DOWN"];titleFadeOut 2;
 	sleep 5;
@@ -120,7 +105,6 @@ drawic = {if (!isnil "mapm") then {
 	        private["_ctrl"];
 	        _ctrl =  _this select 0;
 		_iscale = (1 - ctrlMapScale _ctrl) max .2;
-
 		_irad = 30;
 	        _color = [0, 0, 0, 1];
 	        _icon = "\ca\ui\data\icon_zora_ca.paa";
@@ -146,11 +130,8 @@ drawic = {if (!isnil "mapm") then {
 		       		_ctrl drawIcon ["\ca\ui\data\iconman_ca.paa", _color, getPosASL _x, _iscale*30, _iscale*30, getDir _x, "", 1];
 		        };
 		} foreach Entities "CAManBase";
-
 	};
-
 };
-
 portal =
 {	
 	if (!isnil "mapm") then
@@ -170,22 +151,15 @@ portal =
 		else {onMapSingleClick "";};
 	}
 };
-
-// Main cicle
 waituntil 
 {	
-
  	if (!isnil "mapm") then 
 	{
-
 		start_time = diag_tickTime;
-
 		if ((visiblemap) and (builtin_tp))then 
 		{
 			onMapSingleClick "[_pos, _alt] call portal;";
-
 		};
-
 		if (_zombie_R_gay) then {zombies = getPosATL player nearEntities ["zZombie_Base", _howfarzed];} else {zombies = [];};
 		if (I_fuck_Animals) then {animalsl = getPosATL player nearEntities ["CAAnimalBase", _howfarzed];} else {animalsl = [];};
              
@@ -258,7 +232,6 @@ waituntil
 				};
 			} forEach AllDead;
 		};
-
 		{ 
 			if !(_x in vList) then 
 			{ 
@@ -291,7 +264,6 @@ waituntil
 					true;
 				}; 
 			}; 
-
 			if (count (crew _x) > 0) then 
 			{ 
 				
@@ -333,9 +305,7 @@ waituntil
 					}; 
 				}forEach crew _x;
 			}; 
-
 		} forEach (Entities "LandVehicle"+ Entities "Air" + Entities"Ship");
-
 		{ 
 			if (!(_x in sList) and (player != _x) and (player_HUD_k) and (getPlayerUID _x != "")) then
 			{
@@ -360,7 +330,6 @@ waituntil
 					true;
 				}; 
 			};
-
                       	if (!(_x in pList) and (vehicle _x == _x) and (getPlayerUID _x != "")) then 			 
 			{
 				private ["_pos", "_mkr"]; 

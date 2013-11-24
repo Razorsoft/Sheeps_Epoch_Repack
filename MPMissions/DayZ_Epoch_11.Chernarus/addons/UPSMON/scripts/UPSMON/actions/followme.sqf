@@ -1,41 +1,27 @@
 
-
-
-
-
 private ["_caller","_id","_rnd","_join","_direction","_npc"];
 _npc = _this select 0;
 _caller = _this select 1;
 _id 	= _this select 2;
-
 _rnd = 0;
 _join=true;
 _npc switchmove "";	
-
 _direction = ((getpos _caller select 0) - (getpos _npc select 0)) atan2 ((getpos _caller select 1) - (getpos _npc select 1));
-
-
 if(_direction < 0) then {_direction = _direction + 360}; 
 _npc setdir _direction;
 _npc dowatch _caller;
 _npc setSpeedMode "LIMITED";
 _npc domove position _caller;	
-
 	
 sleep 0.5;
-
 _rnd = random 100;
 _npc setmimic "Sad";
-
 if (_rnd <= 30 ) then {
 	_npc globalchat "Ok";
 };
-
 if (_rnd > 30  && _rnd <= 50) then {
 	_npc globalchat "Yes";	
 };
-
-
 if (_rnd > 50  && _rnd <= 100) then {
 	_join=false;	
 	_rnd = random 100;	
@@ -45,7 +31,6 @@ if (_rnd > 50  && _rnd <= 100) then {
 		_npc switchmove "CtsPercMstpSnonWnonDnon_idle31rejpaniVnose";	
 		_npc globalchat "Kiss my ass";		
 	};
-
 	if (_rnd > 20  && _rnd <= 40) then {
 		_npc setmimic "Agresive";	
 		_npc switchmove "CtsPercMstpSnonWnonDnon_idle33rejpaniVzadku";	
@@ -74,7 +59,6 @@ if (_rnd > 50  && _rnd <= 100) then {
 		_npc globalchat "Fuck you";			
 	};
 };
-
 if (_join) then {
 	
 	_npc stop false;
@@ -89,5 +73,4 @@ if (_join) then {
 		[_npc] joinSilent _caller;	
 	};
 };
-
 if (true) exitWith {};
