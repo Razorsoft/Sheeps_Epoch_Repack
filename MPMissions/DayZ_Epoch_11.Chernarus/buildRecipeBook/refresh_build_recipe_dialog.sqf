@@ -1,12 +1,8 @@
 ﻿_recipe = allBuildables select currentBuildRecipe;
-
 _requeriments = [];
 _classname = "";
-
 _requeriments  = _recipe select 0;
 _classname = _recipe select 1;
-
-
 _recipeQtyTankTrap= _requeriments select 0;
 _recipeQtyWire= _requeriments select 1;
 _recipeQtySandbag= _requeriments select 2;
@@ -24,8 +20,6 @@ _recipeQtyForestCamoNet= _requeriments select 13;
 _recipeQtyWoodShed= _requeriments select 14;
 _recipeQtyBurlap= _requeriments select 15;
 _recipeQtyGlass= _requeriments select 16;
-
-
 _mags = magazines player;
 _qtyTankTrap=0;
 _qtyWire=0;
@@ -44,7 +38,6 @@ _qtyForestCamoNet=0;
 _qtyWoodShed=0;
 _qtyBurlap=0;
 _qtyGlass=0;
-
 _buildables = [];
 _mags = magazines player;
 	if ("ItemTankTrap" in _mags) then {
@@ -133,7 +126,6 @@ _mags = magazines player;
 	if ("wooden_shed_kit" in _mags) then {
 		_qtyWoodShed = {_x == "wooden_shed_kit"} count magazines player;
 		_buildables set [count _buildables, _qtyWoodShed]; 
-
 		_itemWoodShed = "wooden_shed_kit";
 	} else { _qtyWoodShed = 0; _buildables set [count _buildables, _qtyWoodShed]; };
 	
@@ -148,32 +140,20 @@ _mags = magazines player;
 		_buildables set [count _buildables, _qtyGlass]; 
 		_itemGlass = "PartGlass";
 	} else { _qtyGlass = 0; _buildables set [count _buildables, _qtyGlass]; };
-
 _result = false;
-
 _result = [_requeriments,_buildables] call BIS_fnc_areEqual;
-
-
 _restrictions=[];
 _restrictions = _recipe select 2;
-
 _toolbox=false;
 _toolbox= _restrictions select 3;
-
 _etool=false;
 _etool= _restrictions select 4;
-
 _medWait=false;
 _longWait=false;
 _medWait=_restrictions select 5;
 _longWait=_restrictions select 6;
-
-
-
-
 _removable=false;
 _removable=_restrictions select 10;
-
 _chance ="";
 if (_removable) then {
     _chance="Rem:30% Fail"
@@ -192,41 +172,19 @@ if(_longWait) then {
         _chance="Rem:95% Fail"
     };
 } ;
-
 _inBuilding=false;
 _inBuilding=_restrictions select 7;
-
 _road=false;
 _road=_restrictions select 8;
-
 _inTown=false;
 _inTown=_restrictions select 9;
-
-
-
-
-
-
-
-
-
 with uiNamespace do {
-
-
 if (!_result) then { 
     (Build_Recipe_Dialog displayCtrl 1600) ctrlEnable false;
-
 } else {
     
     (Build_Recipe_Dialog displayCtrl 1600) ctrlEnable true;
 };
-
-
-
-
-
-
-
     
     (Build_Recipe_Dialog displayCtrl 1006) ctrlSetText format["%1",_classname];
     
@@ -261,11 +219,3 @@ if (!_result) then {
     (Build_Recipe_Dialog displayCtrl 1014) ctrlSetText format["%1",_inBuilding];
     (Build_Recipe_Dialog displayCtrl 1018) ctrlSetText format["%1",_chance];
 };
-
-
-
-
-
-
-
-

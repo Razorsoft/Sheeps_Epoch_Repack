@@ -2,7 +2,6 @@
 diag_log ( "[AGN] Starting Trader City Safezone Commander!" );
  
 if ( isDedicated || isServer ) exitWith {diag_log ( "Error: Attempting to start AGN products on a server where it should not be!" );}; 
-
 Private ["_EH_Fired", "_ehID", "_fix","_inVehicle","_inVehicleLast","_EH_Fired_Vehicle",
 		"_inVehicleDamage","_antiBackpackThread","_antiBackpackThread2"];
 		
@@ -10,9 +9,6 @@ private ["AGN_safeZoneGodmode","AGN_safeZoneMessages","AGN_safeZone_Backpack_All
 		"AGN_safeZone_Backpack_AllowGearFromVehicles","AGN_safeZone_Backpack_AllowGearFromDeadPlayers",
 		"AGN_safeZone_Vehicles_DisableMountedGuns","AGN_safeZone_Players_DisableWeaponFiring",
 		"AGN_safeZone_Backpack_EnableAntiBackpack","AGN_safeZone_Vehicles_AllowGearFromWithinVehicles"];
-
-
-
 AGN_safeZoneDebug = false; 
 AGN_safeZoneGodmode = true; 								
 AGN_safeZoneMessages = true;								
@@ -24,24 +20,17 @@ AGN_safeZone_Backpack_AllowFriendlyTaggedAccess = true;
 AGN_safeZone_Vehicles_DisableMountedGuns = true;			
 AGN_safeZone_Vehicles_AllowGearFromWithinVehicles = true;	
 AGN_safeZone_Players_DisableWeaponFiring = true;			
-
-
 disableSerialization;
-
 waitUntil {!isNil "dayz_animalCheck"};
 if ( AGN_safeZoneMessages ) then { systemChat ( "[AGN] Trader Zone Commander Loaded!" ); };
-
 _inVehicle = objNull;
 _inVehicleLast = objNull;
-
 while {true} do {
 	
 	waitUntil { !canBuild };
-
 	_inSafezoneFinished = false;
 	if ( AGN_safeZoneMessages ) then { systemChat ("[AGN] Entering Trader Area - God Mode Enabled"); };
 	_thePlayer = player;
-
 	if ( AGN_safeZoneGodmode ) then
 	{
 		player_zombieCheck = {};
@@ -107,7 +96,6 @@ while {true} do {
 							_lp = true;
 						};
 					} forEach ( _inchk );
-
 					_ip = isPlayer _ct;
 					_ia = alive _ct;
 					_iv = _ct isKindOf "AllVehicles";
@@ -128,7 +116,6 @@ while {true} do {
 					hintSilent ( format["AGN Safezone Commander\n\nCursorTarget\n%1\n\nDistance\n%2\n\nLootpile\n%3 [%9]\n\nisPlayer\n%4\n\nAlive\n%5\n\nisVehicle\n%6\n\ninVehicle\n%7\n\nisFriendly\n%8 (%12) [%10]\n\nSkip: %11\n",
                                                 _ct, _dis, _lp, _ip, _ia, _iv, _inv, _if, AGN_safeZone_Backpack_AllowGearFromLootPiles, AGN_safeZone_Backpack_AllowFriendlyTaggedAccess, _skip, _ctOwnerID] );
 };
-
 					
 					
 					if ( _lp ) then {_skip = true;};
@@ -195,7 +182,6 @@ while {true} do {
 	} else {
 		waitUntil { canBuild };
 	};
-
 	AGN_LastPlayerLookedAt = objNull;
 	AGN_LastPlayerLookedAtCountDown = 5;
 	terminate _antiBackpackThread;
@@ -216,7 +202,6 @@ while {true} do {
 			_inVehicleLast removeEventHandler ["Fired", _EH_Fired_Vehicle];
 		};
 	};
-
 	if ( AGN_safeZone_Players_DisableWeaponFiring ) then
 	{
 		_thePlayer removeEventHandler ["Fired", _EH_Fired];

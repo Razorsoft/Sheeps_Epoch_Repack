@@ -7,21 +7,15 @@ burybodies = true;
 zombieEmitter = true;
 basebuildScript = true;
 burnTent = true;
-
 scriptName "Functions\misc\fn_selfActions.sqf";
-
 private ["_isWreckBuilding","_temp_keys","_magazinesPlayer","_isPZombie","_vehicle","_inVehicle","_hasFuelE","_hasRawMeat","_hasKnife","_hasToolbox","_onLadder","_nearLight","_canPickLight","_canDo","_text","_isHarvested","_isVehicle","_isVehicletype","_isMan","_traderType","_ownerID","_isAnimal","_isDog","_isZombie","_isDestructable","_isTent","_isFuel","_isAlive","_Unlock","_lock","_buy","_dogHandle","_lieDown","_warn","_hastinitem","_allowedDistance","_menu","_menu1","_humanity_logic","_low_high","_cancel","_metals_trader","_traderMenu","_isWreck","_isRemovable","_isDisallowRepair","_rawmeat","_humanity","_speed","_dog","_hasbottleitem","_isAir","_isShip","_playersNear","_findNearestGens","_findNearestGen","_IsNearRunningGen","_cursorTarget","_isnewstorage","_itemsPlayer","_ownerKeyId","_typeOfCursorTarget","_hasKey","_oldOwner","_combi","_key_colors","_player_deleteBuild","_player_flipveh","_player_lockUnlock_crtl","_player_butcher","_player_studybody","_player_cook","_player_boil","_hasFuelBarrelE","_hasHotwireKit"];
-
 if (TradeInprogress) exitWith {}; 
-
 _vehicle = vehicle player;
 _isPZombie = player isKindOf "PZombie_VB";
 _inVehicle = (_vehicle != player);
-
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _canDo = (!r_drag_sqf and !r_player_unconscious and !_onLadder);
 if(bloodbagScript)then{
-
 	_mags = magazines player;
 	
 	
@@ -36,7 +30,6 @@ if(bloodbagScript)then{
 		player removeAction s_player_selfBloodbag;
 		s_player_selfBloodbag = -1;
 	};
-
 };
 if (basebuildScript) then {
 _currentSkin = typeOf(player);
@@ -46,14 +39,9 @@ _currentSkin = typeOf(player);
 			camoNetB_Nato = nearestObject [player, "Land_CamoNetB_NATO"];
 			camoNetVar_Nato = nearestObject [player, "Land_CamoNetVar_NATO"];
 			camoNet_Nato = nearestObject [player, "Land_CamoNet_NATO"];
-
 	_mags = magazines player;
 	if ("ItemTankTrap" in _mags || "ItemSandbag" in _mags || "ItemWire" in _mags || "PartWoodPile" in _mags || "PartGeneric" in _mags || "PartWoodLumber" in _mags || "PartWoodPlywood" in _mags || "ItemSandbagLarge" in _mags || "sandbag_nest_kit" in _mags || "ItemPole" in _mags || "ItemCorrugated" in _mags || "storage_shed_kit" in _mags || "desert_net_kit" in _mags || "forest_net_kit" in _mags || "wooden_shed_kit" in _mags || "ItemBurlap" in _mags || "PartGlass" in _mags) then {
 		hasBuildItem = true;
-
-
-
-
 	} else { hasBuildItem = false;};
 	if((speed player <= 1) && hasBuildItem && _canDo) then {
 		if (s_player_recipeMenu < 0) then {
@@ -76,7 +64,6 @@ _currentSkin = typeOf(player);
 		camoNetVar_Nato distance player < 10 or 
 		camoNet_Nato distance player < 10)) then {
 		if (s_player_deleteCamoNet < 0) then {
-
 			s_player_deleteCamoNet = player addaction [("<t color=""#F01313"">" + ("Remove Netting") +"</t>"),"dayz_code\actions\player_remove.sqf","",1,true,true,"",""];
 			s_player_netCodeObject = player addaction [("<t color=""#8E11F5"">" + ("Enter Code of Object to remove Netting") +"</t>"),"dayz_code\external\keypad\fnc_keyPad\enterCode.sqf","",5,false,true,"",""];
 		};
@@ -100,10 +87,7 @@ if(_canDo && removeObject && !procBuild && !remProc &&
 			player removeAction s_player_codeRemoveNet;
 			s_player_codeRemoveNet = -1;
 	};
-
 };
-
-
 _nearLight = 	nearestObject [player,"LitObject"];
 _canPickLight = false;
 if (!isNull _nearLight) then {
@@ -111,8 +95,6 @@ if (!isNull _nearLight) then {
 		_canPickLight = isNull (_nearLight getVariable ["owner",objNull]);
 	};
 };
-
-
 if (_canPickLight and !dayz_hasLight and !_isPZombie) then {
 	if (s_player_grabflare < 0) then {
 		_text = getText (configFile >> "CfgAmmo" >> (typeOf _nearLight) >> "displayName");
@@ -125,7 +107,6 @@ if (_canPickLight and !dayz_hasLight and !_isPZombie) then {
 	s_player_grabflare = -1;
 	s_player_removeflare = -1;
 };
-
 if (!DZE_ForceNameTagsOff) then {
 	if (s_player_showname < 0 and !_isPZombie) then {
 		if (DZE_ForceNameTags) then {
@@ -137,7 +118,6 @@ if (!DZE_ForceNameTagsOff) then {
 		};
 	};
 };
-
 if(_isPZombie) then {
 	if (s_player_callzombies < 0) then {
 		s_player_callzombies = player addAction ["Raise Horde", "\z\addons\dayz_code\actions\call_zombies.sqf",player, 5, true, false, "",""];
@@ -168,32 +148,24 @@ if(_isPZombie) then {
 		s_player_pzombiesfeed = -1;
 	};
 };
-
-
 _allowedDistance = 4;
 _isAir = cursorTarget isKindOf "Air";
 _isShip = cursorTarget isKindOf "Ship";
 if(_isAir or _isShip) then {
 	_allowedDistance = 6;
 };
-
 if (!isNull cursorTarget and !_inVehicle and !_isPZombie and (player distance cursorTarget < _allowedDistance) and _canDo) then {	
-
 	
 	_cursorTarget = cursorTarget;
-
 	
 	_typeOfCursorTarget = typeOf _cursorTarget;
-
 	
-
 	_isVehicle = _cursorTarget isKindOf "AllVehicles";
 	_isVehicletype = _typeOfCursorTarget in ["ATV_US_EP1","ATV_CZ_EP1"];
 	_isnewstorage = _typeOfCursorTarget in DZE_isNewStorage;
 	
 	
 	_magazinesPlayer = magazines player;
-
 	
 	_hasbottleitem = "ItemWaterbottle" in _magazinesPlayer;
 	_hastinitem = false;
@@ -205,7 +177,6 @@ if (!isNull cursorTarget and !_inVehicle and !_isPZombie and (player distance cu
 	_hasFuelE = 	"ItemJerrycanEmpty" in _magazinesPlayer;
 	_hasFuelBarrelE = 	"ItemFuelBarrelEmpty" in _magazinesPlayer;
 	_hasHotwireKit = 	"ItemHotwireKit" in _magazinesPlayer;
-
 	_itemsPlayer = items player;
 	
 	_temp_keys = [];
@@ -217,10 +188,8 @@ if (!isNull cursorTarget and !_inVehicle and !_isPZombie and (player distance cu
 			_temp_keys set [count _temp_keys,str(_ownerKeyId)];
 		};
 	} forEach _itemsPlayer;
-
 	_hasKnife = 	"ItemKnife" in _itemsPlayer;
 	_hasToolbox = 	"ItemToolbox" in _itemsPlayer;
-
 	_hasMatches    = "ItemMatchbox" in _itemsPlayer; 
 	_isMan = _cursorTarget isKindOf "Man";
 	_traderType = _typeOfCursorTarget;
@@ -234,7 +203,6 @@ if (!isNull cursorTarget and !_inVehicle and !_isPZombie and (player distance cu
 	
 	_isRemovable = _typeOfCursorTarget in DZE_isRemovable;
 	_isDisallowRepair = _typeOfCursorTarget in ["M240Nest_DZ"];
-
 	_isTent = _cursorTarget isKindOf "TentStorage";
 	
 	_isAlive = alive _cursorTarget;
@@ -288,7 +256,6 @@ if(basebuildScript) then {
 	_player_flipveh = false;
 	_player_deleteBuild = false;
 	_player_lockUnlock_crtl = false;
-
 	
 	if(_isAlive) then {
 		
@@ -309,16 +276,12 @@ if(basebuildScript) then {
 					_player_flipveh = true;	
 				};
 			};
-
-
 			if(!_isMan and _ownerID != "0" and !(_cursorTarget isKindOf "Bicycle")) then {
 				_player_lockUnlock_crtl = true;
 			};
-
 		};
 	
 	};
-
 	if(_player_deleteBuild) then {
 		if (s_player_deleteBuild < 0) then {
 			s_player_deleteBuild = player addAction [format[localize "str_actions_delete",_text], "\z\addons\dayz_code\actions\remove.sqf",_cursorTarget, 1, true, true, "", ""];
@@ -327,7 +290,6 @@ if(basebuildScript) then {
 		player removeAction s_player_deleteBuild;
 		s_player_deleteBuild = -1;
 	};
-
 	
 	
 	if(_player_lockUnlock_crtl) then {
@@ -361,7 +323,6 @@ if(basebuildScript) then {
 		{player removeAction _x} forEach s_player_lockunlock;s_player_lockunlock = [];
 		s_player_lockUnlock_crtl = -1;
 	};
-
 	if(DZE_AllowForceSave) then {
 		
 		if((_isVehicle or _isTent) and !_isMan) then {
@@ -409,10 +370,8 @@ if(basebuildScript) then {
 	
 	_player_butcher = false;
 	_player_studybody = false;
-
 	
 	if (!_isAlive) then {
-
 		
 		if((_isAnimal or _isZombie) and _hasKnife) then {
 			_isHarvested = _cursorTarget getVariable["meatHarvested",false];
@@ -420,14 +379,11 @@ if(basebuildScript) then {
 				_player_butcher = true;
 			};
 		};
-
 		
 		if (_isMan and !_isZombie and !_isAnimal) then {
 			_player_studybody = true;
 		};
 	};
-
-
 	
 	if (_player_butcher) then {
 		if (s_player_butcher < 0) then {
@@ -441,7 +397,6 @@ if(basebuildScript) then {
 		player removeAction s_player_butcher;
 		s_player_butcher = -1;
 	};
-
 	
 	if (_player_studybody) then {
 		if (s_player_studybody < 0) then {
@@ -451,11 +406,9 @@ if(basebuildScript) then {
 		player removeAction s_player_studybody;
 		s_player_studybody = -1;
 	};
-
 	
 	_player_cook = false;
 	_player_boil = false;
-
 	
 	if (inflamed _cursorTarget) then {
 		
@@ -469,7 +422,6 @@ if(basebuildScript) then {
 			_player_boil = true;
 		};
 	};
-
 	
 	if (_player_cook) then {
 		if (s_player_cook < 0) then {
@@ -508,7 +460,6 @@ if(basebuildScript) then {
 		player removeAction s_player_packtent;
 		s_player_packtent = -1;
 	};
-
 	
 	if((_typeOfCursorTarget in DZE_LockableStorage) and _ownerID != "0" and (player distance _cursorTarget < 3)) then {
 		if (s_player_unlockvault < 0) then {
@@ -532,10 +483,8 @@ if(basebuildScript) then {
 		{player removeAction _x} forEach s_player_combi;s_player_combi = [];
 		s_player_unlockvault = -1;
 	};
-
 	
 	if(_typeOfCursorTarget in DZE_UnLockedStorage and _ownerID != "0" and (player distance _cursorTarget < 3)) then {
-
 		if (s_player_lockvault < 0) then {
 			if(_ownerID == dayz_combination or _ownerID == dayz_playerUID) then {
 				s_player_lockvault = player addAction [format["Lock %1",_text], "\z\addons\dayz_code\actions\vault_lock.sqf",_cursorTarget, 0, false, true, "",""];
@@ -550,9 +499,7 @@ if(basebuildScript) then {
 		player removeAction s_player_lockvault;
 		s_player_lockvault = -1;
 	};
-
 	
-
     
 	if(_typeOfCursorTarget == "Info_Board_EP1") then {
 		if (s_player_information < 0) then {
@@ -588,7 +535,6 @@ if(basebuildScript) then {
 		player removeAction s_player_fuelauto;
 		s_player_fuelauto = -1;
 	};
-
 	
 	if(_typeOfCursorTarget in DZE_fueltruckarray and alive _cursorTarget) then {	
 		if (s_player_fuelauto2 < 0) then {
@@ -603,7 +549,6 @@ if(basebuildScript) then {
 		player removeAction s_player_fuelauto2;
 		s_player_fuelauto2 = -1;
 	};
-
 	
 	if ((_cursorTarget isKindOf "ModularItems") or (_cursorTarget isKindOf "Land_DZE_WoodDoor_Base") or (_cursorTarget isKindOf "CinderWallDoor_DZ_Base")) then {
 		if ((s_player_lastTarget select 0) != _cursorTarget) then {
@@ -630,7 +575,6 @@ if(basebuildScript) then {
 				s_player_downgrade_build = -1;
 			};
 		};
-
 		if (s_player_downgrade_build < 0) then {
 			s_player_lastTarget set [1,_cursorTarget];
 			s_player_downgrade_build = player addAction [format["Remove Lock from %1",_text], "\z\addons\dayz_code\actions\player_buildingDowngrade.sqf",_cursorTarget, -2, false, true, "",""];
@@ -639,7 +583,6 @@ if(basebuildScript) then {
 		player removeAction s_player_downgrade_build;
 		s_player_downgrade_build = -1;
 	};
-
 	
 	if((_cursorTarget isKindOf "ModularItems" or _cursorTarget isKindOf "DZE_Housebase") and (damage _cursorTarget >= 0.1)) then {
 		if ((s_player_lastTarget select 2) != _cursorTarget) then {
@@ -648,7 +591,6 @@ if(basebuildScript) then {
 				s_player_maint_build = -1;
 			};
 		};
-
 		if (s_player_maint_build < 0) then {
 			s_player_lastTarget set [2,_cursorTarget];
 			
@@ -660,8 +602,6 @@ if(basebuildScript) then {
 		player removeAction s_player_maint_build;
 		s_player_maint_build = -1;
 	};
-
-
 	
 	if(_cursorTarget isKindOf "Generator_DZ") then {
 		if (s_player_fillgen < 0) then {
@@ -684,23 +624,6 @@ if(basebuildScript) then {
 		player removeAction s_player_fillgen;
 		s_player_fillgen = -1;
 	};
-
-	
-	/*
-	if(_typeOfCursorTarget == "TOW_DZE") then {
-		if (s_player_towing < 0) then {
-			if(!(_cursorTarget getVariable ["DZEinTow", false])) then {
-				s_player_towing = player addAction ["Attach Straps", "\z\addons\dayz_code\actions\tow_AttachStraps.sqf",_cursorTarget, 0, false, true, "",""];				
-			} else {
-				s_player_towing = player addAction ["Detach Straps", "\z\addons\dayz_code\actions\tow_DetachStraps.sqf",_cursorTarget, 0, false, true, "",""];				
-			};
-		};
-	} else {
-		player removeAction s_player_towing;
-		s_player_towing = -1;
-	};
-	*/
-
 if(tentsleepScript)then{
     
 	if(_isTent and _ownerID == dayz_characterID) then {
@@ -746,16 +669,13 @@ if(burnTent)then{
 			s_player_repair_crtl = -1;
 		};
 	};
-
 	
 	if (_isMan and !_isPZombie and _traderType in serverTraders) then {
 		
 		if (s_player_parts_crtl < 0) then {
-
 			
 			_humanity = player getVariable ["humanity",0];
 			_traderMenu = call compile format["menu_%1;",_traderType];
-
 			
 			
 			_low_high = "low";
@@ -789,7 +709,6 @@ if(burnTent)then{
 				
 				_metals_trader = player addAction ["Trade Metals", "\z\addons\dayz_code\actions\trade_metals.sqf",["na"], 0, true, false, "",""];
 				s_player_parts set [count s_player_parts,_metals_trader];
-
 			};
 			s_player_parts_crtl = 1;
 			
@@ -798,7 +717,6 @@ if(burnTent)then{
 		{player removeAction _x} forEach s_player_parts;s_player_parts = [];
 		s_player_parts_crtl = -1;
 	};
-
 	
 	if(dayz_tameDogs) then {
 		
@@ -855,26 +773,20 @@ if(burnTent)then{
 			s_player_followdog = -1;
 		};
 	};
-
 } else {
 	
 	{dayz_myCursorTarget removeAction _x} forEach s_player_repairActions;s_player_repairActions = [];
 	s_player_repair_crtl = -1;
-
 	{player removeAction _x} forEach s_player_combi;s_player_combi = [];
 		
 	dayz_myCursorTarget = objNull;
 	s_player_lastTarget = [objNull,objNull,objNull,objNull,objNull];
-
 	{player removeAction _x} forEach s_player_parts;s_player_parts = [];
 	s_player_parts_crtl = -1;
-
 	{player removeAction _x} forEach s_player_lockunlock;s_player_lockunlock = [];
 	s_player_lockUnlock_crtl = -1;
-
 	player removeAction s_player_checkGear;
 	s_player_checkGear = -1;
-
 	
 	player removeAction s_player_forceSave;
 	s_player_forceSave = -1;
@@ -923,7 +835,6 @@ if(burnTent)then{
 	s_player_packvault = -1;
 	player removeAction s_player_lockvault;
 	s_player_lockvault = -1;
-
 	player removeAction s_player_information;
 	s_player_information = -1;
 	player removeAction s_player_fillgen;
@@ -953,9 +864,7 @@ if(burnTent)then{
 	player removeAction s_player_drinkWater;
     s_player_drinkWater = -1;
 };
-
 if (drinkwaterScript) then {
-
 private["_playerPos","_canDrink","_isPond","_isWell","_pondPos","_objectsWell","_objectsPond","_display"];
  
 _playerPos = getPosATL player;
@@ -997,9 +906,7 @@ if (_canDrink) then {
         s_player_drinkWater = -1;
     };
  };
-
 if (burybodies) then {
-
 	if (!_isAlive and !_isZombie and !_isAnimal and _hasETool and _isMan and _canDo) then {
         if (s_player_bury_human < 0) then {
             s_player_bury_human = player addAction [format["Bury Body"], "Scripts\bury_human.sqf",cursorTarget, 3, true, true, "", ""];
@@ -1009,7 +916,6 @@ if (burybodies) then {
         s_player_bury_human = -1;
     };
 };
-
 if (takeclothesScript) then {
 	_clothesTaken = cursorTarget getVariable["clothesTaken",false];
     if (_isMan and !_isAlive and !_isZombie and !_clothesTaken) then {
@@ -1021,8 +927,6 @@ if (takeclothesScript) then {
         s_player_clothes = -1;
     };
 };
-
-
 if (suicideScript)then{
 	private ["_handGun"];
 	_handGun = currentWeapon player;
@@ -1045,9 +949,6 @@ if (suicideScript)then{
 		s_player_suicide = -1;
 	};
 };
-
-
-
 _dogHandle = player getVariable ["dogID", 0];
 if (_dogHandle > 0) then {
 	_dog = _dogHandle getFSMVariable "_dog";
