@@ -1,6 +1,6 @@
 adminScript = true;
 busrouteScript = true;
-safeZoneCommander = false;
+safeZoneCommander = true;
 fastRope = true;
 snowstorm = true;
 houselights = true;
@@ -123,7 +123,7 @@ if (!isDedicated) then {
 	
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 		_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
-		_void = [] execVM "R3F_Realism\R3F_Realism_Init.sqf";
+		_void = [] execVM "Scripts\R3F_Realism_Init.sqf";
 	};
 
 if (busrouteScript) then {

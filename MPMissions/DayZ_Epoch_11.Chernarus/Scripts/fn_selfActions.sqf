@@ -384,7 +384,6 @@ if(basebuildScript) then {
 			_player_studybody = true;
 		};
 	};
-	
 	if (_player_butcher) then {
 		if (s_player_butcher < 0) then {
 			if(_isZombie) then {
@@ -397,7 +396,6 @@ if(basebuildScript) then {
 		player removeAction s_player_butcher;
 		s_player_butcher = -1;
 	};
-	
 	if (_player_studybody) then {
 		if (s_player_studybody < 0) then {
 			s_player_studybody = player addAction [localize "str_action_studybody", "\z\addons\dayz_code\actions\study_body.sqf",_cursorTarget, 0, false, true, "",""];
@@ -406,23 +404,16 @@ if(basebuildScript) then {
 		player removeAction s_player_studybody;
 		s_player_studybody = -1;
 	};
-	
 	_player_cook = false;
 	_player_boil = false;
-	
 	if (inflamed _cursorTarget) then {
-		
-		
 		if (_hasRawMeat) then {
 			_player_cook = true;	
 		};
-		
-		
 		if (_hasbottleitem and _hastinitem) then {
 			_player_boil = true;
 		};
 	};
-	
 	if (_player_cook) then {
 		if (s_player_cook < 0) then {
 			s_player_cook = player addAction [localize "str_actions_self_05", "\z\addons\dayz_code\actions\cook.sqf",_cursorTarget, 3, true, true, "", ""];
@@ -431,8 +422,6 @@ if(basebuildScript) then {
 		player removeAction s_player_cook;
 		s_player_cook = -1;
 	};
-	
-	
 	if (_player_boil) then {
 		if (s_player_boil < 0) then {
 			s_player_boil = player addAction [localize "str_actions_boilwater", "\z\addons\dayz_code\actions\boil.sqf",_cursorTarget, 3, true, true, "", ""];
@@ -441,7 +430,6 @@ if(basebuildScript) then {
 		player removeAction s_player_boil;
 		s_player_boil = -1;
 	};
-	
 	if(_cursorTarget == dayz_hasFire) then {
 		if ((s_player_fireout < 0) and !(inflamed _cursorTarget) and (player distance _cursorTarget < 3)) then {
 			s_player_fireout = player addAction [localize "str_actions_self_06", "\z\addons\dayz_code\actions\fire_pack.sqf",_cursorTarget, 0, false, true, "",""];
@@ -450,8 +438,6 @@ if(basebuildScript) then {
 		player removeAction s_player_fireout;
 		s_player_fireout = -1;
 	};
-	
-	
 	if(_isTent and _ownerID == dayz_characterID) then {
 		if ((s_player_packtent < 0) and (player distance _cursorTarget < 3)) then {
 			s_player_packtent = player addAction [localize "str_actions_self_07", "\z\addons\dayz_code\actions\tent_pack.sqf",_cursorTarget, 0, false, true, "",""];
@@ -460,7 +446,6 @@ if(basebuildScript) then {
 		player removeAction s_player_packtent;
 		s_player_packtent = -1;
 	};
-	
 	if((_typeOfCursorTarget in DZE_LockableStorage) and _ownerID != "0" and (player distance _cursorTarget < 3)) then {
 		if (s_player_unlockvault < 0) then {
 			if(_typeOfCursorTarget in DZE_LockedStorage) then {
@@ -483,7 +468,6 @@ if(basebuildScript) then {
 		{player removeAction _x} forEach s_player_combi;s_player_combi = [];
 		s_player_unlockvault = -1;
 	};
-	
 	if(_typeOfCursorTarget in DZE_UnLockedStorage and _ownerID != "0" and (player distance _cursorTarget < 3)) then {
 		if (s_player_lockvault < 0) then {
 			if(_ownerID == dayz_combination or _ownerID == dayz_playerUID) then {
@@ -499,8 +483,6 @@ if(basebuildScript) then {
 		player removeAction s_player_lockvault;
 		s_player_lockvault = -1;
 	};
-	
-    
 	if(_typeOfCursorTarget == "Info_Board_EP1") then {
 		if (s_player_information < 0) then {
 			s_player_information = player addAction ["Recent Murders", "\z\addons\dayz_code\actions\list_playerDeaths.sqf",[], 0, false, true, "",""];
@@ -509,22 +491,15 @@ if(basebuildScript) then {
 		player removeAction s_player_information;
 		s_player_information = -1;
 	};
-	
-	
 	if(_typeOfCursorTarget in dayz_fuelpumparray) then {	
 		if (s_player_fuelauto < 0) then {
-			
-			
 			_findNearestGens = nearestObjects [player, ["Generator_DZ"], 30];
 			_findNearestGen = [];
-			{
-				if (alive _x and (_x getVariable ["GeneratorRunning", false])) then {
+			{if (alive _x and (_x getVariable ["GeneratorRunning", false])) then {
 					_findNearestGen set [(count _findNearestGen),_x];
 				};
 			} foreach _findNearestGens;
 			_IsNearRunningGen = count (_findNearestGen);
-			
-			
 			if(_IsNearRunningGen > 0) then {
 				s_player_fuelauto = player addAction ["Fill Vehicle", "\z\addons\dayz_code\actions\fill_nearestVehicle.sqf",objNull, 0, false, true, "",""];
 			} else {
@@ -566,8 +541,6 @@ if(basebuildScript) then {
 		player removeAction s_player_upgrade_build;
 		s_player_upgrade_build = -1;
 	};
-	
-	
 	if((_isDestructable or _cursorTarget isKindOf "Land_DZE_WoodDoorLocked_Base" or _cursorTarget isKindOf "CinderWallDoorLocked_DZ_Base") and (DZE_Lock_Door == _ownerID)) then {
 		if ((s_player_lastTarget select 1) != _cursorTarget) then {
 			if (s_player_downgrade_build > 0) then {	
@@ -583,7 +556,6 @@ if(basebuildScript) then {
 		player removeAction s_player_downgrade_build;
 		s_player_downgrade_build = -1;
 	};
-	
 	if((_cursorTarget isKindOf "ModularItems" or _cursorTarget isKindOf "DZE_Housebase") and (damage _cursorTarget >= 0.1)) then {
 		if ((s_player_lastTarget select 2) != _cursorTarget) then {
 			if (s_player_maint_build > 0) then {	
@@ -593,16 +565,12 @@ if(basebuildScript) then {
 		};
 		if (s_player_maint_build < 0) then {
 			s_player_lastTarget set [2,_cursorTarget];
-			
 			s_player_maint_build = player addAction [format["Maintain %1",_text], "sripts\cpcmaintfix.sqf",_cursorTarget, -2, false, true, "",""];
-			
-			
 		};
 	} else {
 		player removeAction s_player_maint_build;
 		s_player_maint_build = -1;
 	};
-	
 	if(_cursorTarget isKindOf "Generator_DZ") then {
 		if (s_player_fillgen < 0) then {
 			
@@ -625,7 +593,6 @@ if(basebuildScript) then {
 		s_player_fillgen = -1;
 	};
 if(tentsleepScript)then{
-    
 	if(_isTent and _ownerID == dayz_characterID) then {
 		if ((s_player_sleep < 0) and (player distance _cursorTarget < 3)) then {
 			s_player_sleep = player addAction [localize "str_actions_self_sleep", "Scripts\player_sleep.sqf",_cursorTarget, 0, false, true, "",""];
@@ -635,7 +602,6 @@ if(tentsleepScript)then{
 		s_player_sleep = -1;
 	};
 }else{
-    
 	if(_isTent and _ownerID == dayz_characterID) then {
 		if ((s_player_sleep < 0) and (player distance _cursorTarget < 3)) then {
 			s_player_sleep = player addAction [localize "str_actions_self_sleep", "\z\addons\dayz_code\actions\player_sleep.sqf",_cursorTarget, 0, false, true, "",""];
@@ -655,7 +621,6 @@ if(burnTent)then{
         s_player_igniteTent = -1;
     };
 };	
-	
 	if ((dayz_myCursorTarget != _cursorTarget) and _isVehicle and !_isMan and _hasToolbox and (damage _cursorTarget < 1) and !_isDisallowRepair) then {
 		if (s_player_repair_crtl < 0) then {
 			dayz_myCursorTarget = _cursorTarget;
@@ -669,15 +634,10 @@ if(burnTent)then{
 			s_player_repair_crtl = -1;
 		};
 	};
-	
 	if (_isMan and !_isPZombie and _traderType in serverTraders) then {
-		
 		if (s_player_parts_crtl < 0) then {
-			
 			_humanity = player getVariable ["humanity",0];
 			_traderMenu = call compile format["menu_%1;",_traderType];
-			
-			
 			_low_high = "low";
 			_humanity_logic = false;
 			if((_traderMenu select 2) == "friendly") then {
@@ -693,34 +653,21 @@ if(burnTent)then{
 			if(_humanity_logic) then {
 				_cancel = player addAction [format["Your humanity is too %1 this trader refuses to talk to you.",_low_high], "\z\addons\dayz_code\actions\trade_cancel.sqf",["na"], 0, true, false, "",""];
 				s_player_parts set [count s_player_parts,_cancel];
-			} else {
-				
-				
-				{
-					
-					_buy = player addAction [format["Trade %1 %2 for %3 %4",(_x select 3),(_x select 5),(_x select 2),(_x select 6)], "\z\addons\dayz_code\actions\trade_items_wo_db.sqf",[(_x select 0),(_x select 1),(_x select 2),(_x select 3),(_x select 4),(_x select 5),(_x select 6)], (_x select 7), true, true, "",""];
+			} else {{_buy = player addAction [format["Trade %1 %2 for %3 %4",(_x select 3),(_x select 5),(_x select 2),(_x select 6)], "\z\addons\dayz_code\actions\trade_items_wo_db.sqf",[(_x select 0),(_x select 1),(_x select 2),(_x select 3),(_x select 4),(_x select 5),(_x select 6)], (_x select 7), true, true, "",""];
 					s_player_parts set [count s_player_parts,_buy];
-				
 				} forEach (_traderMenu select 1);
-				
 				_buy = player addAction ["Trader Menu", "\z\addons\dayz_code\actions\show_dialog.sqf",(_traderMenu select 0), 99, true, false, "",""];
 				s_player_parts set [count s_player_parts,_buy];
-				
-				
 				_metals_trader = player addAction ["Trade Metals", "\z\addons\dayz_code\actions\trade_metals.sqf",["na"], 0, true, false, "",""];
 				s_player_parts set [count s_player_parts,_metals_trader];
 			};
 			s_player_parts_crtl = 1;
-			
 		};
 	} else {
 		{player removeAction _x} forEach s_player_parts;s_player_parts = [];
 		s_player_parts_crtl = -1;
-	};
-	
+	};	
 	if(dayz_tameDogs) then {
-		
-		
 		if (_isDog and _isAlive and (_hasRawMeat) and _ownerID == "0" and player getVariable ["dogID", 0] == 0) then {
 			if (s_player_tamedog < 0) then {
 				s_player_tamedog = player addAction [localize "str_actions_tamedog", "\z\addons\dayz_code\actions\tame_dog.sqf", _cursorTarget, 1, false, true, "", ""];
@@ -774,11 +721,9 @@ if(burnTent)then{
 		};
 	};
 } else {
-	
 	{dayz_myCursorTarget removeAction _x} forEach s_player_repairActions;s_player_repairActions = [];
 	s_player_repair_crtl = -1;
-	{player removeAction _x} forEach s_player_combi;s_player_combi = [];
-		
+	{player removeAction _x} forEach s_player_combi;s_player_combi = [];		
 	dayz_myCursorTarget = objNull;
 	s_player_lastTarget = [objNull,objNull,objNull,objNull,objNull];
 	{player removeAction _x} forEach s_player_parts;s_player_parts = [];
@@ -786,8 +731,7 @@ if(burnTent)then{
 	{player removeAction _x} forEach s_player_lockunlock;s_player_lockunlock = [];
 	s_player_lockUnlock_crtl = -1;
 	player removeAction s_player_checkGear;
-	s_player_checkGear = -1;
-	
+	s_player_checkGear = -1;	
 	player removeAction s_player_forceSave;
 	s_player_forceSave = -1;
 	player removeAction s_player_flipveh;
@@ -809,8 +753,7 @@ if(burnTent)then{
 	player removeAction s_player_fillfuel;
 	s_player_fillfuel = -1;
 	player removeAction s_player_studybody;
-	s_player_studybody = -1;
-	
+	s_player_studybody = -1;	
 	player removeAction s_player_tamedog;
 	s_player_tamedog = -1;
 	player removeAction s_player_feeddog;
@@ -826,9 +769,7 @@ if(burnTent)then{
 	player removeAction s_player_warndog;
 	s_player_warndog = -1;
 	player removeAction s_player_followdog;
-	s_player_followdog = -1;
-    
-    
+	s_player_followdog = -1;   
 	player removeAction s_player_unlockvault;
 	s_player_unlockvault = -1;
 	player removeAction s_player_packvault;
@@ -851,18 +792,11 @@ if(burnTent)then{
 	s_player_fuelauto = -1;
 	player removeAction s_player_fuelauto2;
 	s_player_fuelauto2 = -1;
-	player removeAction s_player_selfBloodbag;
-	s_player_selfBloodbag = -1;
 	player removeAction s_player_igniteTent;
     s_player_igniteTent = -1;
 	player removeAction s_player_bury_human;
     s_player_bury_human = -1;
 	player removeAction s_player_clothes;
-    s_player_clothes = -1;
-	player removeAction zombieShield;
-    zombieShield = -1;
-	player removeAction s_player_drinkWater;
-    s_player_drinkWater = -1;
 };
 if (drinkwaterScript) then {
 private["_playerPos","_canDrink","_isPond","_isWell","_pondPos","_objectsWell","_objectsPond","_display"];
@@ -873,20 +807,16 @@ _isPond = false;
 _isWell = false;
 _pondPos = [];
 _objectsWell = [];
- 
 if (!_canDrink) then {
     _objectsWell = nearestObjects [_playerPos, [], 4];
-    {
-        
+    { 
         _isWell = ["_well",str(_x),false] call fnc_inString;
         if (_isWell) then {_canDrink = true};
     } forEach _objectsWell;
-};
- 
+}; 
 if (!_canDrink) then {
     _objectsPond = nearestObjects [_playerPos, [], 50];
-    {
-        
+    {    
         _isPond = ["pond",str(_x),false] call fnc_inString;
         if (_isPond) then {
             _pondPos = (_x worldToModel _playerPos) select 2;
@@ -895,8 +825,7 @@ if (!_canDrink) then {
             };
         };
     } forEach _objectsPond;
-};
- 
+}; 
 if (_canDrink) then {
         if (s_player_drinkWater < 0) then {
             s_player_drinkWater = player addaction[("<t color=""#0000c7"">" + ("Drink water") +"</t>"),"scripts\drink_water.sqf"];
@@ -932,14 +861,9 @@ if (suicideScript)then{
 	_handGun = currentWeapon player;
 	if ((_handGun in ["revolver_gold_EP1","glock17_EP1","M9","M9SD","Makarov","MakarovSD","revolver_EP1","UZI_EP1","Sa61_EP1","Colt1911"]) && (player ammo _handGun > 0)) then {
 		hasSecondary = true;
-	} else {
-		hasSecondary = false;
-	};
-	if (player ammo _handGun == 1) then {
-		lastRound = true;
-	} else {
-		lastRound = false;
-	};
+	} else {hasSecondary = false;};
+	if (player ammo _handGun == 1) then {lastRound = true;
+	} else {lastRound = false;};
 	if((speed player <= 1) && hasSecondary && lastRound && _canDo) then {
 		if (s_player_suicide < 0) then {
 			s_player_suicide = player addaction[("<t color=""#ff0000"">" + ("Commit Suicide") +"</t>"),"Scripts\suicide_init.sqf",_handGun,0,false,true,"",""];

@@ -65,7 +65,7 @@ _cpcimmune =[
 "Land_CamoNetB_NATO_EP1",
 "Land_HouseV_1I4",
 "Land_hut_old02",
-"Land_Ind_SawMillPen"
+"Land_Ind_SawMillPen",
 "Land_Ind_Garage01",
 "Land_pumpa",
 "ZavoraAnim",

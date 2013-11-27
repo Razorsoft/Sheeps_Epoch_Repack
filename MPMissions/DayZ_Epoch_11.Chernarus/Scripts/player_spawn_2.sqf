@@ -1,3 +1,4 @@
+debugmonitor = true;
 private ["_refObj","_size","_vel","_speed","_hunger","_thirst","_timeOut","_result","_factor","_randomSpot","_mylastPos","_distance","_lastTemp","_rnd","_listTalk","_bloodChanged","_id","_messTimer","_display","_control","_combatdisplay","_combatcontrol","_timeleft","_inVehicle","_tempPos","_lastUpdate","_foodVal","_thirstVal","_lowBlood","_startcombattimer","_combattimeout","_myPos","_lastPos","_debug","_saveTime","_maxDistanceTravel","_maxDistanceDebug","_maxDistanceZeroPos","_maxDistancePlayer","_maxDistanceVehicle","_isPZombie"];
 disableSerialization;
 _timeOut = 0;
@@ -179,6 +180,7 @@ dayz_lastSave = time;
 dayz_Magazines = [];
 };
 };
+if (debugmonitor) then{
 _nearestCity = nearestLocations [getPos player, ["NameCityCapital","NameCity","NameVillage","NameLocal"],750];
 _textCity = "Wilderness";
 if (count _nearestCity > 0) then {_textCity = text (_nearestCity select 0)};
@@ -210,6 +212,7 @@ if (_startcombattimer == 1) then {
 player setVariable["combattimeout", time + 30, true];
 player setVariable["startcombattimer", 0, true];
 dayz_combat = 1;
+};
 };
 _combattimeout = player getVariable["combattimeout",0];
 if (_combattimeout > 0) then {
