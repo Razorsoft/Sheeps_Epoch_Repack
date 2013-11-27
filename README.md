@@ -5,9 +5,6 @@
 
 - You need to have MySQL version 5.5 and up.
 - Import \sql\full.sql into your database
-- Import \sql\full.sql into your database
-- Import \sql\add_recommended_mysql_events.sql into your database
-- Import \sql\add_lastupdated_to_existing_object_data
 
 (NOTE: If your having issues installing the functions, and get a message saying you don't have permission to install, you must install the functions as a 'root' user)
 
