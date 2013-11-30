@@ -2,7 +2,7 @@
 #include "defines.hpp"
 #include "build_recipe_dialog.hpp"
 #include "build_recipe_list_dialog.hpp"
-#include "addin\fx\descrExt.h"
+#include "Scripts\addin\fx\descrExt.h"
 respawn = "BASE";
 respawndelay = 5;
 onLoadMission= "DayZ Epoch Chernarus";
