@@ -2,15 +2,11 @@
 
 <u><b>Installing Database:</b></u>
 ============================
-
 - You need to have MySQL version 5.5 and up.
-- Import \sql\full.sql into your database
-
-(NOTE: If your having issues installing the functions, and get a message saying you don't have permission to install, you must install the functions as a 'root' user)
+- Import \sql\full.sql into your epoch database
 
 <u><b>Installing Files: LAN</b></u>
 ============================
-
 - Install the latest OA Beta Patch (http://www.arma2.com/beta-patch.php)
 - Copy all files into your arma 2 directory into the same folder
 - Edit the following file:<br>
@@ -21,7 +17,6 @@ to start server run instance_11_Chernarus.bat<br>
 
 <u><b>Enabling Admin Tools</b></u>
 ============================
-
 open <b>/admintools/Activate.sqf</b> Look for:
 <pre>if ((getPlayerUID player) in ["#######"]) then {
 Change "#######" to your Player ID

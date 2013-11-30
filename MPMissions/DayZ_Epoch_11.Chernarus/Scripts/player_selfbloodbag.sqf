@@ -1,6 +1,22 @@
-
+////////////////////////////////////////////////////////////////////////////////////////////
+// Script writen by Krixes																	
+//    Infection chance and some comments added by Player2									
+//    Combat check added by istealth														
+//																							
+//	Version 1.4																				
+//																							
+// Change Log:																			    
+// 1: Added bloodbag use timer																
+// 2: Added a timer for the amount of time before player can use self bloodbag again		
+////////////////////////////////////////////////////////////////////////////////////////////
 
 private ["_bloodAmount","_humanityBool","_infectionChance","_humanityNegBool","_humanityNegAmount","_humanityAmount","_infectedLifeLost","_infectedLifeBool","_lastBloodbag","_bloodbagLastUsedTime","_bloodbagTime","_bloodbagUseTime","_bloodbagUsageTime","_incombat","_timeout"];
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Config Start-----------------------------------------------------------------------------------------------------------------------
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 _bloodAmount = 4000; 
 _bloodbagUseTime = 30; 
@@ -12,6 +28,18 @@ _infectedLifeLost = 1000;
 
 _humanityBool = false; 
 _humanityAmount = 50; 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Config End-------------------------------------------------------------------------------------------------------------------------
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Everything below need not be modified unless you know what you are doing! 
+/////////////////////////////////////////////////////////////////////////////
 
 _bloodbagTime = time - lastBloodbag; 
 _bloodbagUsageTime = time;
@@ -30,9 +58,9 @@ if (_inCombat) then {
 	
 	player playActionNow "Medic"; 
 	
-	
-	
-	
+	//////////////////////////////////////////////
+	// Fancy cancel if interrupted addition start 
+	//////////////////////////////////////////////
 	r_interrupt = false; 
 	_animState = animationState player; 
 	r_doLoop = true; 
@@ -59,9 +87,9 @@ if (_inCombat) then {
 		sleep 0.1;
 	};
 	r_doLoop = false; 
-	/
-	
-	
+	/////////////////////////////////////////////
+	// Fancy cancel if interrupted addition end 
+	////////////////////////////////////////////
 
 	if (_finished) then {
 		player removeMagazine "ItemBloodbag"; 

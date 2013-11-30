@@ -113,7 +113,7 @@
 		_axeBusGroup selectLeader _axeBusUnit;
 		_axeBusDriver = _axeBusUnit;
 		_axeBusDriver addEventHandler ["HandleDamage", {false}];
-		_axeBus addEventHandler ["killed", {[false] execVM "Scripts\init_bus.sqf"}];
+		_axeBus addEventHandler ["killed", {[false] execVM "busroute\init_bus.sqf"}];
 		
 		
 		sleep 36;

@@ -1,3 +1,30 @@
+/**
+ * Script principal qui initialise les systèmes d'artillerie réaliste et de logistique
+ * 
+ * Copyright (C) 2010 madbull ~R3F~
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http:
+ */
+
+/*
+ * Nouveau fil d'exécution pour assurer une compatibilité ascendante (v1.0 à v1.2).
+ * Ces versions préconisaient un #include plutôt que execVM pour appeler ce script.
+ * A partir de la v1.3 l'exécution par execVM prend l'avantage pour 3 raisons :
+ *     - permettre des appels conditionnels optimisés (ex : seulement pour des slots particuliers)
+ *     - l'execVM est mieux connu et compris par l'éditeur de mission
+ *     - l'init client de l'arty devient bloquant : il attend une PUBVAR du serveur (le point d'attache)
+ */
 [] spawn
 {
 	#include "config.sqf"

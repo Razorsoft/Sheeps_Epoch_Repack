@@ -1,5 +1,6 @@
 CHANGE LOG
 
+
 DEVELOPER VERSION 0.6
 * all 0.5 hotfixes applied
 

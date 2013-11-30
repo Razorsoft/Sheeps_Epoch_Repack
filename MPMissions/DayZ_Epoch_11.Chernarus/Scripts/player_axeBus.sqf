@@ -7,9 +7,9 @@ do
 	
 	{
 		if(_x getVariable["isAxeAIBus",0]==1)then{	
-			_getInEvent = _x addEventHandler ["GetIn", {_this execVM "Scripts\player_join_bus.sqf"}];
+			_getInEvent = _x addEventHandler ["GetIn", {_this execVM "busroute\player_join_bus.sqf"}];
 			_x setVariable ["axeGetInBusEv",_getInEvent,false];
-			_getOutEvent = _x addEventHandler ["GetOut", {_this execVM "Scripts\player_leave_bus.sqf"}];
+			_getOutEvent = _x addEventHandler ["GetOut", {_this execVM "busroute\player_leave_bus.sqf"}];
 			_x setVariable ["axeGetOutBusEv",_getOutEvent,false];
 			_x setVariable ["isAxeAIBus",2,false];
 			

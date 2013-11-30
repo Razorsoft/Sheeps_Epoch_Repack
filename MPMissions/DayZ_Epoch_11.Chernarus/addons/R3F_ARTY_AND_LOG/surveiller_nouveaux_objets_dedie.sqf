@@ -26,7 +26,7 @@ while {true} do
 		{
 			_objet = _liste_vehicules select _i;
 			
-			
+			//#ifdef R3F_ARTY_enable 
 			
 			if ({_objet isKindOf _x} count R3F_ARTY_CFG_pieces_artillerie > 0) then
 			{

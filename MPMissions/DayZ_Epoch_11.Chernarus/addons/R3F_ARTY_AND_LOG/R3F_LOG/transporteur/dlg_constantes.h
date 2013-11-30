@@ -14,7 +14,7 @@
 #define R3F_LOG_IDC_dlg_CV_credits (R3F_ARTY_ID_transporteur_START + 11)
 #define R3F_LOG_IDC_dlg_CV_btn_fermer (R3F_ARTY_ID_transporteur_START + 12)
 
-
+// Control types
 #define CT_STATIC           0
 #define CT_BUTTON           1
 #define CT_EDIT             2
@@ -31,7 +31,7 @@
 #define CT_STRUCTURED_TEXT  13
 #define CT_CONTEXT_MENU     14
 #define CT_CONTROLS_GROUP   15
-#define CT_SHORTCUT_BUTTON  16 
+#define CT_SHORTCUT_BUTTON  16 // Arma 2 - textured button
 
 #define CT_XKEYDESC         40
 #define CT_XBUTTON          41
@@ -47,9 +47,9 @@
 #define CT_USER             99
 #define CT_MAP              100
 #define CT_MAP_MAIN         101
-#define CT_List_N_Box       102 
+#define CT_List_N_Box       102 // Arma 2 - N columns list box
 
-
+// Static styles
 #define ST_POS            0x0F
 #define ST_HPOS           0x03
 #define ST_VPOS           0x0C
@@ -80,13 +80,13 @@
 
 #define ST_TITLE          ST_TITLE_BAR + ST_CENTER
 
-
+// Slider styles
 #define SL_DIR            0x400
 #define SL_VERT           0
 #define SL_HORZ           0x400
 
 #define SL_TEXTURES       0x10
 
-
+// Listbox styles
 #define LB_TEXTURES       0x10
 #define LB_MULTI          0x20

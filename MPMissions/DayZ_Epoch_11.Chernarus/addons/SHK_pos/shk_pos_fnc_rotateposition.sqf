@@ -1,5 +1,5 @@
-
-
+//  In: [position,direction]
+// Out: position
 private ["_pos","_dir","_orgX","_orgY","_newX","_newY"];
 _pos = _this select 0;
 _dir = _this select 1;

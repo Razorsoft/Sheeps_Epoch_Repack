@@ -6,7 +6,6 @@ if (true) then
   _this setDir 305.48679;
   _this setPos [11467.155, 11341.848, 3.0517578e-005];
 };
-
 _vehicle_42 = objNull;
 if (true) then
 {
@@ -15,7 +14,6 @@ if (true) then
   _this setDir -7.4119859;
   _this setPos [11467.027, 11364.092, -3.0517578e-005];
 };
-
 _vehicle_44 = objNull;
 if (true) then
 {
@@ -24,7 +22,6 @@ if (true) then
   _this setDir -7.4119859;
   _this setPos [11459.176, 11355.807, 6.1035156e-005];
 };
-
 _vehicle_58 = objNull;
 if (true) then
 {
@@ -33,7 +30,6 @@ if (true) then
   _this setDir 485.22388;
   _this setPos [11466.341, 11354.129, 3.0517578e-005];
 };
-
 _vehicle_60 = objNull;
 if (true) then
 {
@@ -42,7 +38,6 @@ if (true) then
   _this setDir -7.4119859;
   _this setPos [11461.964, 11350.411];
 };
-
 _vehicle_62 = objNull;
 if (true) then
 {
@@ -51,7 +46,6 @@ if (true) then
   _this setDir -157.55025;
   _this setPos [11446.667, 11339.981, -6.1035156e-005];
 };
-
 _vehicle_71 = objNull;
 if (true) then
 {
@@ -60,12 +54,9 @@ if (true) then
   _this setDir 36.088291;
   _this setPos [11465.908, 11356.04, -6.1035156e-005];
 };
-
 _this = createCenter civilian;
 _center_1 = _this;
-
 _group_1 = createGroup _center_1;
-
 _unit_13 = objNull;
 if (true) then
 {
@@ -76,7 +67,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _unit_17 = objNull;
 if (true) then
 {
@@ -87,7 +77,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _vehicle_73 = objNull;
 if (true) then
 {
@@ -97,7 +86,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;this enableSimulation false;";
   _this setPos [11462.709, 11365.512, 3.0517578e-005];
 };
-
 _vehicle_79 = objNull;
 if (true) then
 {
@@ -106,7 +94,6 @@ if (true) then
   _this setDir -54.695484;
   _this setPos [11468.974, 11348.18];
 };
-
 _vehicle_80 = objNull;
 if (true) then
 {
@@ -115,7 +102,6 @@ if (true) then
   _this setDir -48.673214;
   _this setPos [11462.838, 11365.436, -0.55735058];
 };
-
 _vehicle_81 = objNull;
 if (true) then
 {
@@ -124,7 +110,6 @@ if (true) then
   _this setDir 51.760998;
   _this setPos [11461.064, 11364.81, -3.0517578e-005];
 };
-
 _vehicle_85 = objNull;
 if (true) then
 {
@@ -133,7 +118,6 @@ if (true) then
   _this setDir 43.500278;
   _this setPos [11463.023, 11367.06, -3.0517578e-005];
 };
-
 _vehicle_89 = objNull;
 if (true) then
 {
@@ -142,7 +126,6 @@ if (true) then
   _this setDir 209.26443;
   _this setPos [11471.802, 11370.016, -9.1552734e-005];
 };
-
 _unit_56 = objNull;
 if (true) then
 {
@@ -153,7 +136,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _unit_57 = objNull;
 if (true) then
 {
@@ -164,7 +146,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _unit_58 = objNull;
 if (true) then
 {
@@ -175,7 +156,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _unit_59 = objNull;
 if (true) then
 {
@@ -186,7 +166,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _unit_60 = objNull;
 if (true) then
 {
@@ -197,7 +176,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _unit_62 = objNull;
 if (true) then
 {
@@ -208,7 +186,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _vehicle_92 = objNull;
 if (true) then
 {
@@ -216,7 +193,6 @@ if (true) then
   _vehicle_92 = _this;
   _this setPos [11469.859, 11367.099, 0.00012207031];
 };
-
 _vehicle_102 = objNull;
 if (true) then
 {
@@ -225,7 +201,6 @@ if (true) then
   _this setDir 57.059044;
   _this setPos [3974.3894, 11601.295, -1.2288972];
 };
-
 _vehicle_109 = objNull;
 if (true) then
 {
@@ -234,7 +209,6 @@ if (true) then
   _this setDir -63.284313;
   _this setPos [4078.2883, 11649.253, -3.0517578e-005];
 };
-
 _vehicle_114 = objNull;
 if (true) then
 {
@@ -243,7 +217,6 @@ if (true) then
   _this setDir -60.360134;
   _this setPos [4084.1555, 11659.839, -0.00012207031];
 };
-
 _vehicle_115 = objNull;
 if (true) then
 {
@@ -252,7 +225,6 @@ if (true) then
   _this setDir 60.312458;
   _this setPos [4048.9612, 11667.128, 0.015672784];
 };
-
 _vehicle_119 = objNull;
 if (true) then
 {
@@ -260,7 +232,6 @@ if (true) then
   _vehicle_119 = _this;
   _this setPos [3966.9878, 11639.222, -6.1035156e-005];
 };
-
 _vehicle_120 = objNull;
 if (true) then
 {
@@ -269,7 +240,6 @@ if (true) then
   _this setDir -99.873833;
   _this setPos [3993.5701, 11635.519, -0.00015258789];
 };
-
 _vehicle_123 = objNull;
 if (true) then
 {
@@ -277,7 +247,6 @@ if (true) then
   _vehicle_123 = _this;
   _this setPos [3993.9053, 11674.921, -3.0517578e-005];
 };
-
 _vehicle_127 = objNull;
 if (true) then
 {
@@ -286,7 +255,6 @@ if (true) then
   _this setDir 40.906422;
   _this setPos [6314.689, 7791.6929, 0.093172662];
 };
-
 _vehicle_128 = objNull;
 if (true) then
 {
@@ -295,7 +263,6 @@ if (true) then
   _this setDir 49.790733;
   _this setPos [4027.1787, 11657.261, -6.1035156e-005];
 };
-
 _vehicle_130 = objNull;
 if (true) then
 {
@@ -303,7 +270,6 @@ if (true) then
   _vehicle_130 = _this;
   _this setPos [4057.9753, 11638.428, -3.0517578e-005];
 };
-
 _vehicle_133 = objNull;
 if (true) then
 {
@@ -312,7 +278,6 @@ if (true) then
   _this setDir 35.04166;
   _this setPos [4042.5051, 11647.118, 6.1035156e-005];
 };
-
 _vehicle_136 = objNull;
 if (true) then
 {
@@ -321,7 +286,6 @@ if (true) then
   _this setDir 26.150373;
   _this setPos [4019.4063, 11664.92, 3.0517578e-005];
 };
-
 _vehicle_138 = objNull;
 if (true) then
 {
@@ -330,7 +294,6 @@ if (true) then
   _this setDir 201.85086;
   _this setPos [4051.1519, 11642.453, -6.1035156e-005];
 };
-
 _vehicle_140 = objNull;
 if (true) then
 {
@@ -339,7 +302,6 @@ if (true) then
   _this setDir 219.74416;
   _this setPos [4034.2476, 11651.141, -9.1552734e-005];
 };
-
 _vehicle_143 = objNull;
 if (true) then
 {
@@ -348,7 +310,6 @@ if (true) then
   _this setDir 226.36101;
   _this setPos [4021.0457, 11662.883, -3.0517578e-005];
 };
-
 _vehicle_145 = objNull;
 if (true) then
 {
@@ -356,7 +317,6 @@ if (true) then
   _vehicle_145 = _this;
   _this setPos [4025.1404, 11654.706, -3.0517578e-005];
 };
-
 _vehicle_147 = objNull;
 if (true) then
 {
@@ -364,7 +324,6 @@ if (true) then
   _vehicle_147 = _this;
   _this setPos [4039.8711, 11643.114, -3.0517578e-005];
 };
-
 _vehicle_150 = objNull;
 if (true) then
 {
@@ -372,7 +331,6 @@ if (true) then
   _vehicle_150 = _this;
   _this setPos [4012.9392, 11668.524, -6.1035156e-005];
 };
-
 _vehicle_164 = objNull;
 if (true) then
 {
@@ -381,7 +339,6 @@ if (true) then
   _this setDir 72.342918;
   _this setPos [4062.6428, 11682.021, -3.0517578e-005];
 };
-
 _vehicle_165 = objNull;
 if (true) then
 {
@@ -390,7 +347,6 @@ if (true) then
   _this setDir 345.89008;
   _this setPos [4074.3342, 11676.928, -9.1552734e-005];
 };
-
 _vehicle_166 = objNull;
 if (true) then
 {
@@ -400,7 +356,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;this enableSimulation false;";
   _this setPos [4060.9595, 11680.576];
 };
-
 _vehicle_173 = objNull;
 if (true) then
 {
@@ -409,7 +364,6 @@ if (true) then
   _this setDir -67.0504;
   _this setPos [4086.96, 11659.943, -6.1035156e-005];
 };
-
 _vehicle_178 = objNull;
 if (true) then
 {
@@ -418,7 +372,6 @@ if (true) then
   _this setDir 51.630379;
   _this setPos [3878.5791, 11678.632, -3.0517578e-005];
 };
-
 _vehicle_184 = objNull;
 if (true) then
 {
@@ -427,7 +380,6 @@ if (true) then
   _this setDir 326.27802;
   _this setPos [4073.1187, 11679.04, -6.1035156e-005];
 };
-
 _vehicle_187 = objNull;
 if (true) then
 {
@@ -437,7 +389,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;this enableSimulation false;";
   _this setPos [4064.7173, 11680.602, -0.00051879883];
 };
-
 _vehicle_195 = objNull;
 if (true) then
 {
@@ -446,7 +397,6 @@ if (true) then
   _this setDir 363.94629;
   _this setPos [4072.1333, 11677.803, -6.1035156e-005];
 };
-
 _vehicle_197 = objNull;
 if (true) then
 {
@@ -456,7 +406,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;this enableSimulation false;";
   _this setPos [4063.4116, 11679.616];
 };
-
 _vehicle_198 = objNull;
 if (true) then
 {
@@ -466,7 +415,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;this enableSimulation false;";
   _this setPos [4057.5093, 11678.485, -6.1035156e-005];
 };
-
 _vehicle_200 = objNull;
 if (true) then
 {
@@ -476,7 +424,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;this enableSimulation false;";
   _this setPos [4058.8311, 11678.623];
 };
-
 _vehicle_205 = objNull;
 if (true) then
 {
@@ -485,7 +432,6 @@ if (true) then
   _this setDir -94.223312;
   _this setPos [4085.0645, 11669.402, -6.1035156e-005];
 };
-
 _vehicle_206 = objNull;
 if (true) then
 {
@@ -494,7 +440,6 @@ if (true) then
   _this setDir -73.730324;
   _this setPos [4025.1743, 11676.713, -6.1035156e-005];
 };
-
 _vehicle_217 = objNull;
 if (true) then
 {
@@ -503,7 +448,6 @@ if (true) then
   _this setDir 13.455784;
   _this setPos [4027.1782, 11668.193, -0.00012207031];
 };
-
 _vehicle_223 = objNull;
 if (true) then
 {
@@ -511,7 +455,6 @@ if (true) then
   _vehicle_223 = _this;
   _this setPos [4059.2703, 11657.253, -3.0517578e-005];
 };
-
 _vehicle_227 = objNull;
 if (true) then
 {
@@ -520,7 +463,6 @@ if (true) then
   _this setDir 173.80089;
   _this setPos [4057.9426, 11660.814, -9.1552734e-005];
 };
-
 _vehicle_230 = objNull;
 if (true) then
 {
@@ -529,7 +471,6 @@ if (true) then
   _this setDir 291.43402;
   _this setPos [4073.5352, 11679.348, 3.0517578e-005];
 };
-
 _vehicle_231 = objNull;
 if (true) then
 {
@@ -538,7 +479,6 @@ if (true) then
   _this setDir 381.98224;
   _this setPos [4071.7622, 11675.991, -0.00012207031];
 };
-
 _vehicle_238 = objNull;
 if (true) then
 {
@@ -547,7 +487,6 @@ if (true) then
   _this setDir -37.201057;
   _this setPos [4052.7512, 11666.596, -6.1035156e-005];
 };
-
 _vehicle_239 = objNull;
 if (true) then
 {
@@ -556,7 +495,6 @@ if (true) then
   _this setDir 39.652706;
   _this setPos [4064.7468, 11682.927, -3.0517578e-005];
 };
-
 _vehicle_243 = objNull;
 if (true) then
 {
@@ -564,7 +502,6 @@ if (true) then
   _vehicle_243 = _this;
   _this setPos [4054.3711, 11665.827, 0];
 };
-
 _vehicle_244 = objNull;
 if (true) then
 {
@@ -573,7 +510,6 @@ if (true) then
   _this setDir 1.0253659;
   _this setPos [4053.7493, 11671.434, -3.0517578e-005];
 };
-
 _vehicle_246 = objNull;
 if (true) then
 {
@@ -582,7 +518,6 @@ if (true) then
   _this setDir -297.9014;
   _this setPos [4052.1362, 11666.497, 0.015611748];
 };
-
 _vehicle_250 = objNull;
 if (true) then
 {
@@ -591,7 +526,6 @@ if (true) then
   _this setDir -57.903767;
   _this setPos [4058.4089, 11680.73, -0.00012207031];
 };
-
 _vehicle_257 = objNull;
 if (true) then
 {
@@ -600,7 +534,6 @@ if (true) then
   _this setDir 363.94629;
   _this setPos [4074.7046, 11681.784, -3.0517578e-005];
 };
-
 _vehicle_258 = objNull;
 if (true) then
 {
@@ -609,7 +542,6 @@ if (true) then
   _this setDir 207.60707;
   _this setPos [4074.146, 11679.42, -3.0517578e-005];
 };
-
 _vehicle_260 = objNull;
 if (true) then
 {
@@ -618,7 +550,6 @@ if (true) then
   _this setDir 387.25079;
   _this setPos [4072.7244, 11676.598, -3.0517578e-005];
 };
-
 _vehicle_265 = objNull;
 if (true) then
 {
@@ -627,7 +558,6 @@ if (true) then
   _this setDir -37.201057;
   _this setPos [4069.3713, 11677.529, -6.1035156e-005];
 };
-
 _vehicle_291 = objNull;
 if (true) then
 {
@@ -637,7 +567,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;this enableSimulation false;";
   _this setPos [6313.7319, 7790.9473, 0.013100131];
 };
-
 _vehicle_292 = objNull;
 if (true) then
 {
@@ -647,7 +576,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;this enableSimulation false;";
   _this setPos [6314.9482, 7790.9653, 0.093142167];
 };
-
 _vehicle_299 = objNull;
 if (true) then
 {
@@ -656,7 +584,6 @@ if (true) then
   _this setDir -59.92321;
   _this setPos [4041.9973, 11669.914, 0.015611748];
 };
-
 _vehicle_302 = objNull;
 if (true) then
 {
@@ -665,7 +592,6 @@ if (true) then
   _this setDir 128.33586;
   _this setPos [6314.9282, 7792.3154, 0.093233757];
 };
-
 _vehicle_304 = objNull;
 if (true) then
 {
@@ -674,7 +600,6 @@ if (true) then
   _this setDir 393.47345;
   _this setPos [4075.2336, 11678.565, 0.00012207031];
 };
-
 _unit_73 = objNull;
 if (true) then
 {
@@ -685,7 +610,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _unit_74 = objNull;
 if (true) then
 {
@@ -696,7 +620,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _unit_75 = objNull;
 if (true) then
 {
@@ -707,7 +630,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _unit_78 = objNull;
 if (true) then
 {
@@ -718,7 +640,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _unit_79 = objNull;
 if (true) then
 {
@@ -729,7 +650,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _unit_82 = objNull;
 if (true) then
 {
@@ -740,7 +660,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _unit_84 = objNull;
 if (true) then
 {
@@ -751,7 +670,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _vehicle_461 = objNull;
 if (true) then
 {
@@ -760,7 +678,6 @@ if (true) then
   _this setDir 35.687778;
   _this setPos [6316.4673, 7792.5254, 3.0517578e-005];
 };
-
 _vehicle_477 = objNull;
 if (true) then
 {
@@ -769,7 +686,6 @@ if (true) then
   _this setDir 214.02074;
   _this setPos [6315.6763, 7841.8965, -0.056709375];
 };
-
 _vehicle_479 = objNull;
 if (true) then
 {
@@ -778,7 +694,6 @@ if (true) then
   _this setDir 574.57404;
   _this setPos [6330.9556, 7831.4258, -0.034371372];
 };
-
 _vehicle_480 = objNull;
 if (true) then
 {
@@ -787,7 +702,6 @@ if (true) then
   _this setDir 216.2215;
   _this setPos [6320.0742, 7797.5137, 0.26026565];
 };
-
 _vehicle_481 = objNull;
 if (true) then
 {
@@ -796,7 +710,6 @@ if (true) then
   _this setDir -56.676376;
   _this setPos [6304.1455, 7843.9409, -0.01191554];
 };
-
 _vehicle_485 = objNull;
 if (true) then
 {
@@ -805,7 +718,6 @@ if (true) then
   _this setDir 844.86273;
   _this setPos [6337.02, 7822.1895];
 };
-
 _vehicle_490 = objNull;
 if (true) then
 {
@@ -814,7 +726,6 @@ if (true) then
   _this setDir 127.54086;
   _this setPos [6300.7017, 7800.2729];
 };
-
 _vehicle_494 = objNull;
 if (true) then
 {
@@ -822,7 +733,6 @@ if (true) then
   _vehicle_494 = _this;
   _this setPos [6309.9814, 7800.6313];
 };
-
 _vehicle_501 = objNull;
 if (true) then
 {
@@ -831,7 +741,6 @@ if (true) then
   _this setDir 211.38748;
   _this setPos [6321.2383, 7798.9302];
 };
-
 _vehicle_503 = objNull;
 if (true) then
 {
@@ -840,7 +749,6 @@ if (true) then
   _this setDir 574.63867;
   _this setPos [6324.0571, 7836.3125, -0.022317491];
 };
-
 _vehicle_511 = objNull;
 if (true) then
 {
@@ -849,7 +757,6 @@ if (true) then
   _this setDir 38.268478;
   _this setPos [6317.2676, 7788.2417];
 };
-
 _unit_90 = objNull;
 if (true) then
 {
@@ -860,7 +767,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _unit_91 = objNull;
 if (true) then
 {
@@ -871,7 +777,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _vehicle_513 = objNull;
 if (true) then
 {
@@ -880,7 +785,6 @@ if (true) then
   _this setDir -66.023567;
   _this setPos [4017.4268, 11670.082, 9.1552734e-005];
 };
-
 _vehicle_517 = objNull;
 if (true) then
 {
@@ -888,7 +792,6 @@ if (true) then
   _vehicle_517 = _this;
   _this setPos [4057.1663, 11635.8, -9.1552734e-005];
 };
-
 _unit_94 = objNull;
 if (true) then
 {
@@ -899,7 +802,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _unit_95 = objNull;
 if (true) then
 {
@@ -910,7 +812,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _vehicle_521 = objNull;
 if (true) then
 {
@@ -919,7 +820,6 @@ if (true) then
   _this setDir 306.93533;
   _this setPos [6303.6919, 7794.2285, 3.0517578e-005];
 };
-
 _vehicle_523 = objNull;
 if (true) then
 {
@@ -928,7 +828,6 @@ if (true) then
   _this setDir 16.434511;
   _this setPos [6319.2056, 7787.5439, -0.022046415];
 };
-
 _vehicle_527 = objNull;
 if (true) then
 {
@@ -936,7 +835,6 @@ if (true) then
   _vehicle_527 = _this;
   _this setPos [6320.9531, 7787.0967, 6.1035156e-005];
 };
-
 _vehicle_531 = objNull;
 if (true) then
 {
@@ -945,7 +843,6 @@ if (true) then
   _this setDir 487.48059;
   _this setPos [6311.8315, 7793.1309, 9.1552734e-005];
 };
-
 _vehicle_532 = objNull;
 if (true) then
 {
@@ -954,7 +851,6 @@ if (true) then
   _this setDir 50.427696;
   _this setPos [6322.8394, 7791.6792, 3.0517578e-005];
 };
-
 _vehicle_533 = objNull;
 if (true) then
 {
@@ -963,7 +859,6 @@ if (true) then
   _this setDir 285.36954;
   _this setPos [6317.2295, 7803.6357, 3.0517578e-005];
 };
-
 _vehicle_538 = objNull;
 if (true) then
 {
@@ -973,7 +868,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;";
   _this setPos [11457.569, 11360.669, -3.0517578e-005];
 };
-
 _vehicle_541 = objNull;
 if (true) then
 {
@@ -983,7 +877,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;";
   _this setPos [4086.2542, 11662.404, -6.1035156e-005];
 };
-
 _vehicle_544 = objNull;
 if (true) then
 {
@@ -993,7 +886,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;";
   _this setPos [6310.2837, 7797.7686, 3.0517578e-005];
 };
-
 _vehicle_548 = objNull;
 if (true) then
 {
@@ -1001,7 +893,6 @@ if (true) then
   _vehicle_548 = _this;
   _this setPos [4358.5767, 2260.3745, -2.8610229e-006];
 };
-
 _vehicle_550 = objNull;
 if (true) then
 {
@@ -1009,7 +900,6 @@ if (true) then
   _vehicle_550 = _this;
   _this setPos [13533.103, 6358.1616, -8.5830688e-006];
 };
-
 _vehicle_559 = objNull;
 if (true) then
 {
@@ -1017,7 +907,6 @@ if (true) then
   _vehicle_559 = _this;
   _this setPos [7983.9741, 2890.6536, -0.024177462];
 };
-
 _vehicle_567 = objNull;
 if (true) then
 {
@@ -1026,7 +915,6 @@ if (true) then
   _this setDir 207.76485;
   _this setPos [4836.6572, 2528.4377, -0.042138901];
 };
-
 _vehicle_568 = objNull;
 if (true) then
 {
@@ -1035,7 +923,6 @@ if (true) then
   _this setDir 567.49945;
   _this setPos [4827.6084, 2532.1213, -0.033894159];
 };
-
 _vehicle_569 = objNull;
 if (true) then
 {
@@ -1044,7 +931,6 @@ if (true) then
   _this setDir 334.10687;
   _this setPos [4833.8086, 2508.781, 0.016567288];
 };
-
 _vehicle_571 = objNull;
 if (true) then
 {
@@ -1053,7 +939,6 @@ if (true) then
   _this setDir -6.2675123;
   _this setPos [4836.3447, 2519.4587, -0.009747833];
 };
-
 _vehicle_573 = objNull;
 if (true) then
 {
@@ -1062,7 +947,6 @@ if (true) then
   _this setDir 574.28497;
   _this setPos [4845.7427, 2522.3279, -0.052045986];
 };
-
 _unit_97 = objNull;
 if (true) then
 {
@@ -1073,7 +957,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _vehicle_593 = objNull;
 if (true) then
 {
@@ -1083,7 +966,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false; this enableSimulation false;";
   _this setPos [12948.259, 12766.059, -1.5258789e-005];
 };
-
 _vehicle_594 = objNull;
 if (true) then
 {
@@ -1092,7 +974,6 @@ if (true) then
   _this setDir 122.42809;
   _this setPos [12948.999, 12771.618];
 };
-
 _vehicle_595 = objNull;
 if (true) then
 {
@@ -1100,7 +981,6 @@ if (true) then
   _vehicle_595 = _this;
   _this setPos [12946.395, 12769.803, -0.00012207031];
 };
-
 _vehicle_596 = objNull;
 if (true) then
 {
@@ -1109,7 +989,6 @@ if (true) then
   _this setDir 0.041445225;
   _this setPos [12944.525, 12769.121, -9.1552734e-005];
 };
-
 _vehicle_597 = objNull;
 if (true) then
 {
@@ -1119,7 +998,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false; this enableSimulation false;";
   _this setPos [12946.452, 12765.858];
 };
-
 _vehicle_598 = objNull;
 if (true) then
 {
@@ -1129,12 +1007,9 @@ if (true) then
   _this setVehicleInit "this allowDammage false; this enableSimulation false;";
   _this setPos [12946.147, 12768.145, -4.5776367e-005];
 };
-
 _this = createCenter resistance;
 _center_2 = _this;
-
 _group_2 = createGroup _center_2;
-
 _unit_108 = objNull;
 if (true) then
 {
@@ -1145,7 +1020,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _vehicle_600 = objNull;
 if (true) then
 {
@@ -1154,7 +1028,6 @@ if (true) then
   _this setDir -24.982422;
   _this setPos [4052.8269, 11662.361, -9.1552734e-005];
 };
-
 _vehicle_619 = objNull;
 if (true) then
 {
@@ -1164,7 +1037,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;";
   _this setPos [4088.1907, 11661.583];
 };
-
 _vehicle_621 = objNull;
 if (true) then
 {
@@ -1174,7 +1046,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;";
   _this setPos [4060.8157, 11685.167, -6.1035156e-005];
 };
-
 _vehicle_623 = objNull;
 if (true) then
 {
@@ -1184,7 +1055,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;";
   _this setPos [4040.7114, 11668.369, 0.015611748];
 };
-
 _vehicle_626 = objNull;
 if (true) then
 {
@@ -1194,7 +1064,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;";
   _this setPos [4057.0989, 11661.225, -6.1035156e-005];
 };
-
 _vehicle_628 = objNull;
 if (true) then
 {
@@ -1204,7 +1073,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;";
   _this setPos [6296.958, 7801.4048, -3.0517578e-005];
 };
-
 _vehicle_630 = objNull;
 if (true) then
 {
@@ -1214,7 +1082,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;";
   _this setPos [6317.2036, 7814.6909, 6.1035156e-005];
 };
-
 _vehicle_632 = objNull;
 if (true) then
 {
@@ -1224,7 +1091,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;";
   _this setPos [6314.8608, 7792.957, 3.0517578e-005];
 };
-
 _vehicle_634 = objNull;
 if (true) then
 {
@@ -1234,7 +1100,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;";
   _this setPos [11458.806, 11363.813];
 };
-
 _vehicle_636 = objNull;
 if (true) then
 {
@@ -1244,7 +1109,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;";
   _this setPos [11449.293, 11348.902, 9.1552734e-005];
 };
-
 _vehicle_659 = objNull;
 if (true) then
 {
@@ -1252,7 +1116,6 @@ if (true) then
   _vehicle_659 = _this;
   _this setPos [1617.7074, 7773.3115, 6.1035156e-005];
 };
-
 _vehicle_663 = objNull;
 if (true) then
 {
@@ -1260,7 +1123,6 @@ if (true) then
   _vehicle_663 = _this;
   _this setPos [12072.687, 12667.292];
 };
-
 _vehicle_674 = objNull;
 if (true) then
 {
@@ -1269,7 +1131,6 @@ if (true) then
   _this setDir 305.73865;
   _this setPos [6301.0474, 7798.4751, 6.1035156e-005];
 };
-
 _unit_118 = objNull;
 if (true) then
 {
@@ -1280,7 +1141,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _vehicle_676 = objNull;
 if (true) then
 {
@@ -1289,7 +1149,6 @@ if (true) then
   _this setDir 307.24384;
   _this setPos [6295.7153, 7791.561];
 };
-
 _vehicle_678 = objNull;
 if (true) then
 {
@@ -1297,7 +1156,6 @@ if (true) then
   _vehicle_678 = _this;
   _this setPos [6292.998, 7806.4375];
 };
-
 _unit_122 = objNull;
 if (true) then
 {
@@ -1308,7 +1166,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _vehicle_681 = objNull;
 if (true) then
 {
@@ -1318,7 +1175,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;this enableSimulation false;";
   _this setPos [12060.701, 12635.938, -1.5258789e-005];
 };
-
 _vehicle_682 = objNull;
 if (true) then
 {
@@ -1328,7 +1184,6 @@ if (true) then
   _this setVehicleInit "this allowDammage false;this enableSimulation false;";
   _this setPos [12061.653, 12636.994, 1.5258789e-005];
 };
-
 _unit_124 = objNull;
 if (true) then
 {
@@ -1339,7 +1194,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _vehicle_686 = objNull;
 if (true) then
 {
@@ -1347,7 +1201,6 @@ if (true) then
   _vehicle_686 = _this;
   _this setPos [13473.405, 5439.6479, 0.00021648407];
 };
-
 _vehicle_688 = objNull;
 if (true) then
 {
@@ -1356,7 +1209,6 @@ if (true) then
   _this setDir -6.2353768;
   _this setPos [4053.6313, 11671.396, 0.015672784];
 };
-
 _vehicle_689 = objNull;
 if (true) then
 {
@@ -1365,7 +1217,6 @@ if (true) then
   _this setDir 21.845457;
   _this setPos [4036.7148, 11664.595, 0.015703302];
 };
-
 _unit_128 = objNull;
 if (true) then
 {
@@ -1376,7 +1227,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _vehicle_699 = objNull;
 if (true) then
 {
@@ -1385,7 +1235,6 @@ if (true) then
   _this setDir 217.96779;
   _this setPos [4058.7043, 11660.961, 3.0517578e-005];
 };
-
 _vehicle_701 = objNull;
 if (true) then
 {
@@ -1393,7 +1242,6 @@ if (true) then
   _vehicle_701 = _this;
   _this setPos [4059.8516, 11660.219];
 };
-
 _vehicle_704 = objNull;
 if (true) then
 {
@@ -1402,7 +1250,6 @@ if (true) then
   _this setDir -111.72584;
   _this setPos [11455.53, 11341.231];
 };
-
 _vehicle_724 = objNull;
 if (true) then
 {
@@ -1411,7 +1258,6 @@ if (true) then
   _this setDir 35.687778;
   _this setPos [6306.6904, 7787.5947, 0.24377441];
 };
-
 _vehicle_727 = objNull;
 if (true) then
 {
@@ -1420,7 +1266,6 @@ if (true) then
   _this setDir 34.820972;
   _this setPos [6319.2407, 7778.6885, 0.20742251];
 };
-
 _vehicle_732 = objNull;
 if (true) then
 {
@@ -1429,7 +1274,6 @@ if (true) then
   _this setDir 93.599457;
   _this setPos [6324.8804, 7781.7441, 9.1552734e-005];
 };
-
 _vehicle_734 = objNull;
 if (true) then
 {
@@ -1438,7 +1282,6 @@ if (true) then
   _this setDir 68.962952;
   _this setPos [6324.3003, 7785.7813, -3.0517578e-005];
 };
-
 _vehicle_738 = objNull;
 if (true) then
 {
@@ -1447,7 +1290,6 @@ if (true) then
   _this setDir 125.62857;
   _this setPos [6312.1953, 7810.5107];
 };
-
 _vehicle_741 = objNull;
 if (true) then
 {
@@ -1456,7 +1298,6 @@ if (true) then
   _this setDir 395.83041;
   _this setPos [11443.267, 11338.436];
 };
-
 _vehicle_746 = objNull;
 if (true) then
 {
@@ -1465,7 +1306,6 @@ if (true) then
   _this setDir 1.0253659;
   _this setPos [4053.5063, 11671.443];
 };
-
 _vehicle_751 = objNull;
 if (true) then
 {
@@ -1474,7 +1314,6 @@ if (true) then
   _this setDir 34.188072;
   _this setPos [11470.683, 11367.538, 0.025263477];
 };
-
 _vehicle_754 = objNull;
 if (true) then
 {
@@ -1483,7 +1322,6 @@ if (true) then
   _this setDir -54.45937;
   _this setPos [11447.629, 11358.183, -0.67366308];
 };
-
 _vehicle_755 = objNull;
 if (true) then
 {
@@ -1492,7 +1330,6 @@ if (true) then
   _this setDir 31.414593;
   _this setPos [11435.725, 11352.75, -0.82129258];
 };
-
 _vehicle_761 = objNull;
 if (true) then
 {
@@ -1501,7 +1338,6 @@ if (true) then
   _this setDir 215.50694;
   _this setPos [11449.215, 11335.983, 3.0517578e-005];
 };
-
 _vehicle_764 = objNull;
 if (true) then
 {
@@ -1510,7 +1346,6 @@ if (true) then
   _this setDir -59.041649;
   _this setPos [11472.618, 11371.762];
 };
-
 _vehicle_765 = objNull;
 if (true) then
 {
@@ -1519,7 +1354,6 @@ if (true) then
   _this setDir 33.089531;
   _this setPos [11473.339, 11369.769, -3.0517578e-005];
 };
-
 _unit_132 = objNull;
 if (true) then
 {
@@ -1530,7 +1364,6 @@ if (true) then
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;
 };
-
 _vehicle_767 = objNull;
 if (true) then
 {
@@ -1538,7 +1371,6 @@ if (true) then
   _vehicle_767 = _this;
   _this setPos [6323.252, 7780.0688, 3.0517578e-005];
 };
-
 _vehicle_769 = objNull;
 if (true) then
 {
@@ -1547,7 +1379,6 @@ if (true) then
   _this setDir -6.2353768;
   _this setPos [4037.304, 11673.5];
 };
-
 _vehicle_772 = objNull;
 if (true) then
 {
@@ -1556,7 +1387,6 @@ if (true) then
   _this setDir 1.0253659;
   _this setPos [4037.2805, 11673.531];
 };
-
 _vehicle_775 = objNull;
 if (true) then
 {
@@ -1565,7 +1395,6 @@ if (true) then
   _this setDir -65.721718;
   _this setPos [4091.625, 11663.692, 6.1035156e-005];
 };
-
 _vehicle_784 = objNull;
 if (true) then
 {
@@ -1573,7 +1402,6 @@ if (true) then
   _vehicle_784 = _this;
   _this setPos [11455.539, 11341.255];
 };
-
 _vehicle_790 = objNull;
 if (true) then
 {
@@ -1581,7 +1409,6 @@ if (true) then
   _vehicle_790 = _this;
   _this setPos [1617.5127, 7773.2793];
 };
-
 _vehicle_792 = objNull;
 if (true) then
 {
@@ -1589,7 +1416,6 @@ if (true) then
   _vehicle_792 = _this;
   _this setPos [12915.702, 12760.794];
 };
-
 _vehicle_798 = objNull;
 if (true) then
 {
@@ -1598,7 +1424,6 @@ if (true) then
   _this setDir 67.135719;
   _this setPos [6311.124, 7801.1855];
 };
-
 _vehicle_802 = objNull;
 if (true) then
 {
@@ -1607,7 +1432,6 @@ if (true) then
   _this setDir -158.27872;
   _this setPos [6326.7847, 7793.499, 3.0517578e-005];
 };
-
 _vehicle_812 = objNull;
 if (true) then
 {
@@ -1616,7 +1440,6 @@ if (true) then
   _this setDir -414.08893;
   _this setPos [6318.1919, 7806.4321];
 };
-
 _vehicle_813 = objNull;
 if (true) then
 {
@@ -1625,5 +1448,4 @@ if (true) then
   _this setDir 128.79018;
   _this setPos [6295.6436, 7804.3223];
 };
-
 processInitCommands;

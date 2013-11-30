@@ -3,6 +3,7 @@ busrouteScript = true;
 safeZoneCommander = true;
 fastRope = true;
 snowstorm = true;
+debugmonitor = true;
 houselights = true;
 streetlights = true;
 towerlights = true;
@@ -19,49 +20,49 @@ startLoadingScreen ["","RscDisplayLoadCustom"];
 cutText ["","BLACK OUT"];
 enableSaving [false, false];
 
-
-dayZ_instance =	11;					
+//REALLY IMPORTANT VALUES
+dayZ_instance =	11;					//The instance
 dayzHiveRequest = [];
 initialized = false;
 dayz_previousID = 0;
-DZE_teleport = [14000,14000,14000,14000,14000]; 
 
+//disable greeting menu 
 player setVariable ["BIS_noCoreConversations", true];
-
+//disable radio messages to be heard and shown in the left lower corner of the screen
 enableRadio false;
 
-
-spawnShoremode = 1; 
-spawnArea= 1500; 
-MaxHeliCrashes= 5; 
-MaxVehicleLimit = 300; 
-MaxDynamicDebris = 500; 
-dayz_MapArea = 14000; 
-dayz_maxLocalZombies = 30; 
+// DayZ Epoch config
+spawnShoremode = 1; // Default = 1 (on shore)
+spawnArea= 1500; // Default = 1500
+MaxHeliCrashes= 5; // Default = 5
+MaxVehicleLimit = 300; // Default = 50
+MaxDynamicDebris = 500; // Default = 100
+dayz_MapArea = 14000; // Default = 10000
+dayz_maxLocalZombies = 30; // Default = 30 
 
 dayz_paraSpawn = false;
 
-dayz_maxAnimals = 8; 
+dayz_maxAnimals = 8; // Default: 8
 dayz_tameDogs = true;
-DynamicVehicleDamageLow = 0; 
-DynamicVehicleDamageHigh = 100; 
+DynamicVehicleDamageLow = 0; // Default: 0
+DynamicVehicleDamageHigh = 100; // Default: 100
 
 EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","any",0,"crash_spawner"],["any","any","any","any",15,"supply_drop"]];
 dayz_fullMoonNights = true;
 
-
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";				
+//Load in compiled functions
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
 progressLoadingScreen 0.1;
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";				
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";				//Initilize the publicVariable event handlers
 progressLoadingScreen 0.2;
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";	
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";	//Functions used by CLIENT for medical
 progressLoadingScreen 0.4;
-
-call compile preprocessFileLineNumbers "Scripts\compiles.sqf";  				
+//call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";
+call compile preprocessFileLineNumbers "Scripts\compiles.sqf";  				//Compile regular functions
 call compile preprocessFileLineNumbers "Scripts\variables.sqf";
 call compile preprocessFileLineNumbers "dayz_code\init\settings.sqf";
 progressLoadingScreen 0.5;
-call compile preprocessFileLineNumbers "server_traders.sqf";				
+call compile preprocessFileLineNumbers "server_traders.sqf";				//Compile trader configs
 progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
@@ -108,33 +109,38 @@ if ((!isServer) && (player != player)) then
 };
 
 if (isServer) then {
-	call compile preprocessFileLineNumbers "dynamic_vehicle.sqf";				
+	call compile preprocessFileLineNumbers "dynamic_vehicle.sqf";				//Compile vehicle configs
 	dogOwner = [];
 	_nil = [] execVM "mission.sqf";
 	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
 };
 
 if (!isDedicated) then {
-	
+	//Conduct map operations
 	0 fadeSound 0;
 	waitUntil {!isNil "dayz_loadScreenMsg"};
 	dayz_loadScreenMsg = (localize "STR_AUTHENTICATING");
 	
-	
+	//Run the player monitor
 	_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 		_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";	
-		_void = [] execVM "Scripts\R3F_Realism_Init.sqf";
+		_void = [] execVM "R3F_Realism\R3F_Realism_Init.sqf";
 	};
 
 if (busrouteScript) then {
 	if (isServer) then {
-		
+		//Bus Route
 		[true] execVM "Scripts\init_bus.sqf";
 	};
 
 	if (!isDedicated) then {
-		
+		//Bus Route
 		[] execVM "Scripts\player_axeBus.sqf";
+	};
+};
+if (debugmonitor) then {
+	if (!isDedicated) then {
+		[] execVM "Scripts\player_spawn_2.sqf"
 	};
 };
 if (houselights) then {
@@ -149,19 +155,19 @@ if (streetlights) then {
 	};
 	 
 	if (!isDedicated) then {
-	
+	//StreetLights
 	[] execVM "Scripts\street_lights.sqf";
 	};
 };
 if (towerlights) then {
 	if (!isDedicated) then {
-	
+	//TowerLights
 	[] execVM "Scripts\tower_lights.sqf";
 	};
 };
 if (refuelScript) then {
 	if (!isDedicated) then {
-	
+	//AutoRefuel
 	[] execVM "Scripts\kh_actions.sqf";
 	};
 };
@@ -175,10 +181,10 @@ if (liftTow) then {
 	[] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
 };
 if (snowstorm)then{
-	
+	// SnowStorm:
 	if (floor (random 100) < _snowChance)then{
 		if (!isDedicated) then {
-			[] execVM "Scripts\snow.sqf";
+			[] execVM "Scripts\effects.sqf";
 		};
 	};
 };
@@ -186,7 +192,7 @@ if(safeZoneCommander)then{
 	[] execvm 'Scripts\agn_SafeZoneCommander.sqf';
 };
 if(adminScript)then{
-	[] execVM "admintools\Activate.sqf";
+	[] execVM "Scripts\admintools\Activate.sqf";
 };
 if(SargeAI)then{
 	call compile preprocessfile "addons\SHK_pos\shk_pos_init.sqf";

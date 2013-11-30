@@ -1,5 +1,5 @@
-
-
+//  In: marker
+// Out: string (marker shape)
 
 private ["_size","_x","_y","_ret"];
 _size = markersize _this;

@@ -1,5 +1,5 @@
-
-
+//  In: [pointPosition,corners]
+// Out: boolean
 private ["_pos","_corners","_return"];
 _pos     = _this select 0;
 _corners = _this select 1;
@@ -17,8 +17,8 @@ _topRight   = _corners select 2;
 _right      = _topRight select 0;
 _top        = _topRight select 1;
 
-
-
+// x is between left and right
+// y is between bottom and top
 if (_dotX >= _left && _dotX < _right && _dotY >= _bottom && _dotY < _top) then {
   _return = true;
 };

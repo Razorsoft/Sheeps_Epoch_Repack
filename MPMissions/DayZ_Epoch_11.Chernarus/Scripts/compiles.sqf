@@ -1,4 +1,8 @@
-
+/*	
+	FUNCTION COMPILES
+	
+	
+*/
 bottlerainScript = true;
 
 if (!isDedicated) then {
@@ -162,6 +166,14 @@ if(bottlerainScript)then{
 			sleep 0.01;
 		};
 		endLoadingScreen;
+		/*
+		if ( !dayz_clientPreload && !dayz_authed ) then {
+			diag_log "DEBUG: loadscreen guard ended with timeout.";
+			disableUserInput false;
+			1 cutText ["Disconnected!", "PLAIN"];
+			player enableSimulation false;
+		} else { diag_log "DEBUG: loadscreen guard ended."; };
+		*/
 	}; 
 
 	
@@ -392,6 +404,11 @@ if(bottlerainScript)then{
 			dayz_lastCheckBit = diag_tickTime;
 			call dayz_forceSave;
 		};
+		/*
+		if (_dikCode in actionKeys "IngamePause") then {
+			_idOnPause = [] spawn dayz_onPause;
+		};
+		*/
 		_handled
 	};
 	
@@ -673,6 +690,17 @@ if(bottlerainScript)then{
 		[0, player, '', _data] execVM (_item select 9);
 		TraderItemList = -1;
 	};
+
+	
+	/*
+	_death_record = [
+		0_victimName,
+		1_killerName,
+		2_weapon,
+		3_distance,
+		4ServerCurrentTime
+	];
+	*/
 	EpochDeathBoardDialogList = 21000;
 	EpochDeathBoardDialogSText = 21001;
 	EpochDeathBoardDeaths = [];
@@ -680,6 +708,12 @@ if(bottlerainScript)then{
 
 	EpochDeathBoardLoad = {
 		createdialog "EpochDeathBoardDialog";
+		/*PVDZE_plr_DeathBResult = [
+			["maca134","Bob","AK_107_Kobra",100,[8,30]],
+			["Fred","Jonny","FN_FAL",42,[8,32]],
+			["maca134","Bob","M9SD",100,[5,30]],
+			["Fred","Jonny","BAF_AS50_scoped",42,[8,34]]
+		];*/
 		{
 			lbAdd [EpochDeathBoardDialogList, (_x select 0)];
 		} forEach PVDZE_plr_DeathBResult;
@@ -773,10 +807,7 @@ if(bottlerainScript)then{
 	dayz_zombieSpeak = 			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\object_speak.sqf";			
 	vehicle_getHitpoints =		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\vehicle_getHitpoints.sqf";
 	local_gutObject =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\local_gutObject.sqf";		
-	
-	
-	
-	local_lockUnlock =			compile preprocessFileLineNumbers "Scripts\local_lockUnlock.sqf";
+	local_lockUnlock =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\local_lockUnlock.sqf";		
 	local_gutObjectZ =			compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\local_gutObjectZ.sqf";		
 	local_zombieDamage = 		compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\fn_damageHandlerZ.sqf";		
 	local_setFuel =				compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\local_setFuel.sqf";			

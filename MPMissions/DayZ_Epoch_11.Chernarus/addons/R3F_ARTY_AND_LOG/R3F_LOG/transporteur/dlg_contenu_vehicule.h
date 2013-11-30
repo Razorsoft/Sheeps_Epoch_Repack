@@ -5,7 +5,7 @@
  * 
  * This program is free software under the terms of the GNU General Public License version 3.
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http:
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "dlg_constantes.h"
@@ -30,7 +30,7 @@ class R3F_LOG_dlg_contenu_vehicule
 		R3F_LOG_dlg_CV_btn_fermer
 	};
 	
-	
+	// Définition des classes de base
 	class R3F_LOG_dlg_CV_texte
 	{
 		idc = -1;
@@ -168,7 +168,7 @@ class R3F_LOG_dlg_contenu_vehicule
 			border = "\ca\ui\data\ui_border_scroll_ca.paa";
 		};
 	};
-	
+	// FIN Définition des classes de base
 	
 	
 	class R3F_LOG_dlg_CV_arriere_plan

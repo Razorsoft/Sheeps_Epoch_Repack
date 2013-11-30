@@ -1,9 +1,9 @@
 private ["_maxRange","_humanitycheck","_humanity","_skaroTag","_cursorTarget","_bandit","_hero","_color","_string","_targetControl"];
-
+//Created by Skaronator - http:
 Waituntil{!isNull player};
 
-_maxRange = 5; 
-_humanitycheck = true; 
+_maxRange = 5; // Max. Range from the Target 
+_humanitycheck = true; //true = Bandit: Red / Hero: Blue / Survivor: White <<<>>> false = always white (POSSIBLE VALUES: true 
 _bandit = -5000; 
 _hero = 5000; 
 

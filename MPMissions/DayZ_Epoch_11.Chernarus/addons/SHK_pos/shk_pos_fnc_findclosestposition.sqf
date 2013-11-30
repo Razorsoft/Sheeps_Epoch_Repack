@@ -1,6 +1,6 @@
-
-
-
+// Return the closest position from array to the positionA.
+//  In: [positionA,[array of positions]]
+// Out: positionB
 private ["_pA","_ps","_p1","_p2"];
 _pA = _this select 0;
 _ps = _this select 1;
