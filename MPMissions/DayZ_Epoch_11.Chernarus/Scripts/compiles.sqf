@@ -75,10 +75,10 @@ if (!isDedicated) then {
 	
 	pz_attack = 	compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\pzombie\pz_attack.sqf";
 	
-	player_build = compile preprocessFileLineNumbers "dayz_code\compiles\player_build.sqf";
+	player_build = compile preprocessFileLineNumbers "dayz_code\compile\player_build.sqf";
 
-	antiWall = compile preprocessFileLineNumbers "dayz_code\compiles\antiWall.sqf";				
-	anti_discWall = compile preprocessFileLineNumbers "dayz_code\compiles\anti_discWall.sqf";	
+	antiWall = compile preprocessFileLineNumbers "dayz_code\compile\antiWall.sqf";				
+	anti_discWall = compile preprocessFileLineNumbers "dayz_code\compile\anti_discWall.sqf";	
 	refresh_build_recipe_dialog = compile preprocessFileLineNumbers "buildRecipeBook\refresh_build_recipe_dialog.sqf"; 				
 	refresh_build_recipe_list_dialog = compile preprocessFileLineNumbers "buildRecipeBook\refresh_build_recipe_list_dialog.sqf"; 	
 
@@ -104,7 +104,7 @@ if (!isDedicated) then {
 	player_useMeds =			compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\player_useMeds.sqf";
 	
 if(bottlerainScript)then{
-	player_fillWater = compile preprocessFileLineNumbers "scripts\player_waterfill.sqf";
+	player_fillWater = compile preprocessFileLineNumbers "Scripts\player_waterfill.sqf";
 }else{
 	player_fillWater = 			compile preprocessFileLineNumbers "\z\addons\dayz_code\actions\water_fill.sqf";
 };

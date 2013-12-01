@@ -956,23 +956,6 @@ if(burnTent)then{
 	player removeAction s_player_drinkWater;
     s_player_drinkWater = -1;
 };
-if(zombieEmitter)then{
-
-	if (("TrashTinCan" in magazines player) && ("TrashJackDaniels" in magazines player) && ("PartEngine" in magazines player) && ("ItemJerrycan" in magazines player) && ("ItemToolbox" in items player)) then {
-		hasShield = true;
-	} else {
-		hasShield = false;
-	};
-	if (hasShield) then {
-		if (zombieShield < 0) then {
-		zombieShield = player addAction [("<t color=""#00c362"">" + ("Anti-Zombie Freq Emitter") +"</t>"),"scripts\zombieshield.sqf","",5,false,true,"",""];
-		};
-	} else {
-		player removeAction zombieShield;
-		zombieShield = -1;
-	};
-
-};
 if (drinkwaterScript) then {
 
 private["_playerPos","_canDrink","_isPond","_isWell","_pondPos","_objectsWell","_objectsPond","_display"];
