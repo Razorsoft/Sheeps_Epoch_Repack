@@ -1,7 +1,85 @@
+// =========================================================================================================
+//  UPSMON - Urban Patrol Script  
+//  version 5.1.0  SARGE AI version
+//
+//  Author: Monsada (chs.monsada@gmail.com) 
+//		Comunidad Hispana de Simulaci�n: 
+//
+//		Wiki: http://dev-heaven.net/projects/upsmon/wiki
+//		Forum: http://forums.bistudio.com/showthread.php?t=91696
+//		Share your missions with upsmon: http://dev-heaven.net/projects/upsmon/boards/86
+// ---------------------------------------------------------------------------------------------------------
+//  Based on Urban Patrol Script  v2.0.3
+//  Author: Kronzky (www.kronzky.info / kronzky@gmail.com)
+// ---------------------------------------------------------------------------------------------------------
+//  Some little fixes: !Rafalsky (v5.0.8 - 5.1.0)
+//  Code improvements: shay_gman(Artillery), Nordin("noveh")
+// ---------------------------------------------------------------------------------------------------------
+//
+//  Heavily adjusted and fixed for SARGE AI
+//  Version 1.5.1
+
+
+
+//  Required parameters:
+//    unit        = Unit to patrol area (1st argument)
+//    markername  = Name of marker that covers the active area. (2nd argument)
+//
+//	Patrol squad samples: (put in the leader's init field)
+//    nul=[this,"area0"] execVM "scripts\upsmon.sqf";
+//
+//  Defensive squad samples:
+//    nul=[this,"area0","nomove"] execVM "scripts\upsmon.sqf";
+//
+//  Reinforcement
+//    nul=[this,"area0","reinforcement:",1] execVM "scripts\UPSMON.sqf";
+//      (in trigger call:         KRON_UPS_reinforcement1 = true;
+//      (call pos marker mkr1):   KRON_UPS_reinforcement1_pos = getMarkerPos "mkr1";
+//
+//
+//  Optional parameters: _
+//    random      = Place unit at random start position.
+//    randomdn    = Only use random positions on ground level.
+//    randomup    = Only use random positions at top building positions. 
+//    min:n/max:n = Create a random number (between min and max) of 'clones'. ("min:",2,"max:",5)
+//    init:string = Custom init string for created clones.
+//    nomove      = Unit will stay or hide in the near buildings until enemy is spotted.
+//    nofollow    = Unit will only follow an enemy within the marker area.(When fight sometimes can go outside)
+//    onroad      = Unit will get target destination only on the roads 
+//    nosmoke     = Units will not use smoke when s/o wounded or die.
+//    delete:n    = Delete dead units after 'n' seconds.
+//    nowait      = Do not wait at patrol end points.
+//    noslow      = Keep default behaviour of unit (don't change to "safe" and "limited").
+//    noai        = Don't use enhanced AI for evasive and flanking maneuvers.
+//    trigger     = Display a message when no more units are left in sector.
+//    empty:n     = Consider area empty, even if 'n' units are left.
+//    reinforcement  = Makes squad as reinforcement, when alarm KRON_UPS_reinforcement==true this squad will go where enemy were.
+//    reinforcement:x  = Makes squad as reinforcement id, when alarm KRON_UPS_reinforcementx==true this squad will go where enemy were.
+//    fortify = makes leader order to take positions on nearly buildings at distance 200 meters, squad fortified moves less than "nomove"
+//	  aware,combat,stealth,careless defines default behaviour of squad
+//    noveh       = the group will not search for transport vehicles (unless in fight and only combat vehicles)
+//	nowp	= No waypoints will be created for this squad UNTIL ENEMY DETECTED, this squad will comunicate enemies but will not be moved by UPSMON until enemy detected, after that upsmon takes control of squad
+//	nowp2	= No waypoints will be created for this squad UNTIL ENEMY DETECTED and damaged, this squad will comunicate enemies but will not be moved by UPSMON until enemy detected and damaged, after that upsmon takes control of squad
+//	  nowp3	= No waypoints will be created for this squad in any way, this squad will comunicate enemies but will not be moved by UPSMON.
+//	  ambush	= Ambush squad will not move until in combat, will lay mines if enabled and wait for incoming enemies stealth and ambush when near or discovered.
+//	  ambush2	= Ambush squad will not move until in combat, will NOT LAY MINES and wait for incoming enemies stealth and ambush when near or discovered.
+//	  ambush:n	= Creates an anbush and wait maximun the especified time n in seconds. you can put 0 seconds for putting mines and go away if combined with "move" for example
+//	  ambush2:n = Same as ambush:n but without laying mines.
+//	  respawn = allow squad to respawn when all members are dead and no targets near
+//	  respawn:x = allows to define the number of times squad may respawn.
+//     respawntime:x = time to wait before respawn 
+//     showmarker  = Display the area marker.
+//     track       = Display a position and destination marker for each unit.
+
+//	spawned = use only with squads created in runtime, this feature will add squad to UPSMON correctly.
+//	aware,combat,stealth,careless defines default behaviour of squad
+
+// numbers of Civilians killed by players could be read from the array 'KILLED_CIV_COUNTER' -> [Total, by West, by East, by Res, The Killer]
+
 
 private ["_loadouttype","_vehiclecrews","_crew_units","_is_veh_group","_circledefend","_relTX","_relTY","_relUX","_relUY","_waiting","_pursue","_react","_newpos","_currPos","_orgPos","_targetPos","_attackPos","_flankPos","_avoidPos","_speedmode","_dist","_lastdist","_lastmove1","_lastmove2","_gothit","_supressed","_flankdist","_nBuilding","_nBuildingt","_distnbuid","_distnbuidt","_objsflankPos1","_cntobjs1","_objsflankPos2","_cntobjs2","_targettext","_dir1","_dir2","_dir3","_dd","_timeontarget","_dirf1","_dirf2","_fightmode","_flankPos2","_reinforcement","_reinforcementsent","_target","_targets","_flankdir","_prov","_lastpos","_newtarget","_planta","_nomove","_newflankAngle","_sharedist","_fldest","_grpidx","_grpid","_i","_unitpos","_Behaviour","_incar","_inheli","_inboat","_gunner","_driver","_vehicle","_minreact","_lastreact","_rnd","_GetOutDist","_GetOut","_GetIn_NearestVehicles","_makenewtarget","_index","_wp","_grp","_wptype","_wpformation","_targetdead","_frontPos","_GetIn","_dist1","_dist2","_dist3","_fldestfront","_fldest2","_bld","_flyInHeight","_fortify","_buildingdist","_rfid","_rfidcalled","_Mines","_enemytanks","_enemytanksnear","_friendlytanksnear","_mineposition","_enemytanknear","_roads","_timeout","_lastcurrpos","_wait","_countfriends","_side","_SURRENDER","_spawned","_nowp","_unitsIn","_ambush","_ambushed","_ambushdist","_friendside","_enemyside","_newattackPos","_fixedtargetpos","_NearestEnemy","_targetdist","_cargo","_targetsnear","_landing","_ambushwait","_membertypes","_respawn","_respawnmax","_lead","_safemode","_vehicles","_lastwptype","_template","_unittype","_initstr","_fortifyorig","_nowpType","_ambushtype","_vehicletypes","_onroad","_loop2","_tries2","_targetPosTemp","_sokilled","_sowounded","_nosmoke","_newunit","_rlastpos","_rcurrpos","_jumpers","_isSoldier","_noveh","_deadBodiesReact","_e","_npc","_exit","_sharedenemy","_friendlytanks","_closeenough","_initpos","_orgMode","_orgSpeed","_try","_posinfo","_bldpos","_track","_trackername","_markerobj","_markertype","_markercolor","_destname","_surrended","_lastknown","_opfknowval","_currcycle","_groupOne","_pause","_speed","_fm","_rstuckControl","_tries","_centerpos","_centerX","_centerY","_areasize","_rangeX","_rangeY","_areadir","_a","_dp","_drydist","_swimming","_loop","_cont","_currX","_currY","_npcname","_allow_respawn","_grouptype","_unit_weapon_names","_unit_items","_unit_tools","_grps_upd","_check","_valuearray","_grps_band","_grps_sold","_grps_surv","_foreachIndex","_UCthis","_group","_leader","_leader_weapon_names","_leader_items","_leader_tools","_cond","_leadername","_gridspawn","_obj","_grpname","_areamarker","_showmarker","_members","_isman","_iscar","_isboat","_isplane","_friends","_enemies","_area","_cosdir","_sindir","_mindist","_orgDir","_orgWatch","_maxmove","_moved","_damm","_dammchg","_lastdamm","_hitPos","_sin0","_sin90","_cos90","_sin270","_cos270","_fortify2","_nofollow","_shareinfo","_areatrigger","_cycle","_noslow","_deletedead","_respawntime","_type","_unit_skills","_leaderskills","_ai_type","_timeonwaypoint","_circle_up","_veh","_tmp_cargo_units","_tmp_count_units","_tmp_vehicle_number","_tmp_veh_units"];
 
-
+//_ups_init_start_time = diag_tickTime;
 
 if (!isServer) exitWith {};
 
@@ -13,7 +91,7 @@ if (isNil("KRON_UPS_INIT")) then {
 	
 waitUntil {KRON_UPS_INIT==1};
 
-
+// convert argument list to uppercase
 _UCthis = [];
 for [{_i=0},{_i<count _this},{_i=_i+1}] do {_e=_this select _i; if (typeName _e=="STRING") then {_e=toUpper(_e)};_UCthis set [_i,_e]};
 
@@ -93,7 +171,7 @@ _initstr = "";
 _fortifyorig= false;
 _rlastPos = [0,0,0];
 
-
+// unit that's moving
 _obj = leader (_this select 0); //group or leader
 _npc = _obj;
 

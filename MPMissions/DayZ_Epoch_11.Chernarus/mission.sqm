@@ -1199,7 +1199,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="anomalyStone";
-			init="_nul = [this]execVM ""Scripts\addin\anomalyStone.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalyStone.sqf"";";
 		};
 		class Item1
 		{
@@ -1209,7 +1209,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="anomalySpark";
-			init="_nul = [this]execVM ""Scripts\addin\anomalySpark.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalySpark.sqf"";";
 		};
 		class Item2
 		{
@@ -1219,7 +1219,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="anomalyFire";
-			init="_nul = [this]execVM ""Scripts\addin\anomalyFire.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalyFire.sqf"";";
 		};
 		class Item3
 		{
@@ -1229,7 +1229,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="dog";
-			init="_nul = [this]execVM ""Scripts\addin\dogInit.sqf""; _dogSound = createSoundSource [""Sound_LittleDog"", getPosATL this, [], 0];";
+			init="_nul = [this]execVM ""addin\dogInit.sqf""; _dogSound = createSoundSource [""Sound_LittleDog"", getPosATL this, [], 0];";
 		};
 		class Item4
 		{
@@ -1239,7 +1239,7 @@ class Mission
 			id=4;
 			side="EMPTY";
 			vehicle="Land_psi_bouda";text="anomalyStoneFac";
-			init="_nul = [this]execVM ""Scripts\addin\anomalyStone.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalyStone.sqf"";";
 		};
 		class Item5
 		{
@@ -1249,7 +1249,7 @@ class Mission
 			id=5;
 			side="EMPTY";
 			vehicle="Land_psi_bouda";text="anomalySparkFac";
-			init="_nul = [this]execVM ""Scripts\addin\anomalySpark.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalySpark.sqf"";";
 		};
 		class Item6
 		{
@@ -1259,7 +1259,7 @@ class Mission
 			id=6;
 			side="EMPTY";
 			vehicle="Land_psi_bouda";text="anomalyFireFac";
-			init="_nul = [this]execVM ""Scripts\addin\anomalyFire.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalyFire.sqf"";";
 		};
 		class Item7
 		{
@@ -1269,7 +1269,7 @@ class Mission
 			id=7;
 			side="EMPTY";
 			vehicle="Land_psi_bouda";text="anomalySparkFac2";
-			init="_nul = [this]execVM ""Scripts\addin\anomalySpark.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalySpark.sqf"";";
 		};
 		class Item8
 		{
@@ -1279,7 +1279,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="anomalySpark_1";
-			init="_nul = [this]execVM ""Scripts\addin\anomalySpark.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalySpark.sqf"";";
 		};
 		class Item9
 		{
@@ -1289,7 +1289,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="anomalySpark_2";
-			init="_nul = [this]execVM ""Scripts\addin\anomalySpark.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalySpark.sqf"";";
 		};
 		class Item10
 		{
@@ -1299,7 +1299,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="anomalySpark_3";
-			init="_nul = [this]execVM ""Scripts\addin\anomalySpark.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalySpark.sqf"";";
 		};
 		class Item11
 		{
@@ -1309,7 +1309,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="anomalySpark_4";
-			init="_nul = [this]execVM ""Scripts\addin\anomalySpark.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalySpark.sqf"";";
 		};
 		class Item12
 		{
@@ -1319,7 +1319,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="anomalyFire_1";
-			init="_nul = [this]execVM ""Scripts\addin\anomalyFire.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalyFire.sqf"";";
 		};
 		class Item13
 		{
@@ -1329,7 +1329,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="anomalyFire_2";
-			init="_nul = [this]execVM ""Scripts\addin\anomalyFire.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalyFire.sqf"";";
 		};
 		class Item14
 		{
@@ -1339,7 +1339,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="anomalyStone_1";
-			init="_nul = [this]execVM ""Scripts\addin\anomalyStone.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalyStone.sqf"";";
 		};
 		class Item15
 		{
@@ -1349,7 +1349,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="anomalyStone_2";
-			init="_nul = [this]execVM ""Scripts\addin\anomalyStone.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalyStone.sqf"";";
 		};
 		class Item16
 		{
@@ -1359,7 +1359,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="dog_1";
-			init="_nul = [this]execVM ""Scripts\addin\dogInit.sqf""; _dogSound = createSoundSource [""Sound_LittleDog"", getPosATL this, [], 0];";
+			init="_nul = [this]execVM ""addin\dogInit.sqf""; _dogSound = createSoundSource [""Sound_LittleDog"", getPosATL this, [], 0];";
 		};
 		class Item17
 		{
@@ -1369,7 +1369,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="dog_2";
-			init="_nul = [this]execVM ""Scripts\addin\dogInit.sqf""; _dogSound = createSoundSource [""Sound_LittleDog"", getPosATL this, [], 0];";
+			init="_nul = [this]execVM ""addin\dogInit.sqf""; _dogSound = createSoundSource [""Sound_LittleDog"", getPosATL this, [], 0];";
 		};
 		class Item18
 		{
@@ -1379,7 +1379,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="dog_3";
-			init="_nul = [this]execVM ""Scripts\addin\dogInit.sqf""; _dogSound = createSoundSource [""Sound_LittleDog"", getPosATL this, [], 0];";
+			init="_nul = [this]execVM ""addin\dogInit.sqf""; _dogSound = createSoundSource [""Sound_LittleDog"", getPosATL this, [], 0];";
 		};
 		class Item19
 		{
@@ -1389,7 +1389,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="dog_4";
-			init="_nul = [this]execVM ""Scripts\addin\dogInit.sqf""; _dogSound = createSoundSource [""Sound_LittleDog"", getPosATL this, [], 0];";
+			init="_nul = [this]execVM ""addin\dogInit.sqf""; _dogSound = createSoundSource [""Sound_LittleDog"", getPosATL this, [], 0];";
 		};
 		class Item20
 		{
@@ -1398,7 +1398,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Misc_WaterStation";
 			text="entrance";
-			init="_nul = [this]execVM ""Scripts\addin\entrance.sqf"";";
+			init="_nul = [this]execVM ""addin\entrance.sqf"";";
 		};
 		class Item21
 		{
@@ -1408,7 +1408,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="anomalyStone_3";
-			init="_nul = [this]execVM ""Scripts\addin\anomalyStone.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalyStone.sqf"";";
 		};
 		class Item22
 		{
@@ -1418,7 +1418,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="anomalySpark_5";
-			init="_nul = [this]execVM ""Scripts\addin\anomalySpark.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalySpark.sqf"";";
 		};
 		class Item23
 		{
@@ -1428,7 +1428,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_psi_bouda";
 			text="anomalyStone_4";
-			init="_nul = [this]execVM ""Scripts\addin\anomalyStone.sqf"";";
+			init="_nul = [this]execVM ""addin\anomalyStone.sqf"";";
 		};
 	};
 	class Markers

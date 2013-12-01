@@ -138,6 +138,35 @@ if (SAR_dynamic_spawning) then {
         {
             #include "map_config\SAR_cfg_grid_chernarus.sqf"
         };
+        case "tavi":
+        {
+            #include "map_config\SAR_cfg_grid_tavi.sqf"
+        };
+        case "namalsk":
+        {
+            #include "map_config\SAR_cfg_grid_namalsk.sqf"
+        };
+        case "lingor":
+        {
+            #include "map_config\SAR_cfg_grid_lingor.sqf"
+        };
+        case "mbg_celle2":
+        {
+            #include "map_config\SAR_cfg_grid_mbg_celle2.sqf"
+        };
+        case "takistan":
+        {
+            #include "map_config\SAR_cfg_grid_takistan.sqf"
+        };
+        case "fallujah":
+        {
+            #include "map_config\SAR_cfg_grid_fallujah.sqf"
+        };
+        case "panthera2":
+        {
+            #include "map_config\SAR_cfg_grid_panthera.sqf"
+        };
+
     };
 
     //
@@ -235,6 +264,34 @@ switch (_worldname) do {
     case "chernarus":
     {
         #include "map_config\SAR_cfg_grps_chernarus.sqf"
+    };
+    case "tavi":
+    {
+        #include "map_config\SAR_cfg_grps_tavi.sqf"
+    };
+    case "namalsk":
+    {
+        #include "map_config\SAR_cfg_grps_namalsk.sqf"
+    };
+    case "lingor":
+    {
+        #include "map_config\SAR_cfg_grps_lingor.sqf"
+    };
+    case "mbg_celle2":
+    {
+        #include "map_config\SAR_cfg_grps_mbg_celle2.sqf"
+    };
+    case "takistan":
+    {
+        #include "map_config\SAR_cfg_grps_takistan.sqf"
+    };
+    case "fallujah":
+    {
+        #include "map_config\SAR_cfg_grps_fallujah.sqf"
+    };
+    case "panthera2":
+    {
+        #include "map_config\SAR_cfg_grps_panthera.sqf"
     };
     
 };

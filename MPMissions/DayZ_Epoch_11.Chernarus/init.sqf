@@ -1,9 +1,8 @@
 adminScript = true;
 busrouteScript = true;
-safeZoneCommander = true;
+safeZoneCommander = false;
 fastRope = true;
 snowstorm = true;
-debugmonitor = true;
 houselights = true;
 streetlights = true;
 towerlights = true;
@@ -130,39 +129,34 @@ if (!isDedicated) then {
 if (busrouteScript) then {
 	if (isServer) then {
 		//Bus Route
-		[true] execVM "Scripts\init_bus.sqf";
+		[true] execVM "busroute\init_bus.sqf";
 	};
 
 	if (!isDedicated) then {
 		//Bus Route
-		[] execVM "Scripts\player_axeBus.sqf";
-	};
-};
-if (debugmonitor) then {
-	if (!isDedicated) then {
-		[] execVM "Scripts\player_spawn_2.sqf"
+		[] execVM "busroute\player_axeBus.sqf";
 	};
 };
 if (houselights) then {
 	if (!isDedicated) then {
-	[] execVM "Scripts\house_lights.sqf";
+	[] execVM "lights\house_lights.sqf";
 	};
 };
 if (streetlights) then {
 	if (isServer) then {
-	axe_server_lampObjs =    compile preprocessFileLineNumbers "Scripts\fnc_returnLampWS.sqf";
+	axe_server_lampObjs =    compile preprocessFileLineNumbers "lights\fnc_returnLampWS.sqf";
 		"axeLampObjects" addPublicVariableEventHandler {_id = (_this select 1) spawn axe_server_lampObjs};
 	};
 	 
 	if (!isDedicated) then {
 	//StreetLights
-	[] execVM "Scripts\street_lights.sqf";
+	[] execVM "lights\street_lights.sqf";
 	};
 };
 if (towerlights) then {
 	if (!isDedicated) then {
 	//TowerLights
-	[] execVM "Scripts\tower_lights.sqf";
+	[] execVM "lights\tower_lights.sqf";
 	};
 };
 if (refuelScript) then {
@@ -172,7 +166,7 @@ if (refuelScript) then {
 	};
 };
 if (fastRope) then {
-sleep 1; _fast_rope = [] execVM "Scripts\BTC_fast_roping_init.sqf";
+sleep 1; _fast_rope = [] execVM "addons\BTC_fast_roping_init.sqf";
 };
 if (nametags) then {
 	execVM "Scripts\skaronametags.sqf";
@@ -189,10 +183,10 @@ if (snowstorm)then{
 	};
 };
 if(safeZoneCommander)then{
-	[] execvm 'Scripts\agn_SafeZoneCommander.sqf';
+	[] execvm 'AGN\agn_SafeZoneCommander.sqf';
 };
 if(adminScript)then{
-	[] execVM "Scripts\admintools\Activate.sqf";
+	[] execVM "admintools\Activate.sqf";
 };
 if(SargeAI)then{
 	call compile preprocessfile "addons\SHK_pos\shk_pos_init.sqf";
